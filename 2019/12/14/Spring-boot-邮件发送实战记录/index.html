@@ -15,11 +15,13 @@
 <meta property="og:site_name" content="欢迎来到同思远的博客">
 <meta property="og:description" content="第一部分 背景（前置知识）一.邮件发送原理：1.邮件传输协议:SMTP协议和POP3协议2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）二.邮件发送流程：  三.Spring Boot介绍1.约定大于配置2.简单快速开发3.强大的生态链4.Spring boot和发送邮件：Spring boot发送邮件简化了操作的过程">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http:&#x2F;&#x2F;a1.qpic.cn&#x2F;psc?&#x2F;V12mUYwE30s05c&#x2F;1nSAZ*B78DPTEG5idIpYk0EarqPloBkkxkCy3I6JOJrPNIHXyX3ap3jRcVOiTq6amkCz4.SFp9eTe3KMkQmnrG3vUq2hSEwAqf1bn0B4pdU!&#x2F;c&amp;ek&#x3D;1&amp;kp&#x3D;1&amp;pt&#x3D;0&amp;bo&#x3D;gAKpAQAAAAADFxg!&amp;tl&#x3D;1&amp;vuin&#x3D;1084350607&amp;tm&#x3D;1576328400&amp;sce&#x3D;60-2-2&amp;rf&#x3D;viewer_4">
 <meta property="article:published_time" content="2019-12-14T11:13:32.000Z">
-<meta property="article:modified_time" content="2019-12-14T11:26:36.361Z">
+<meta property="article:modified_time" content="2019-12-14T13:21:18.192Z">
 <meta property="article:author" content="Tsy">
 <meta property="article:tag" content="学习，开源，技术，分享">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;a1.qpic.cn&#x2F;psc?&#x2F;V12mUYwE30s05c&#x2F;1nSAZ*B78DPTEG5idIpYk0EarqPloBkkxkCy3I6JOJrPNIHXyX3ap3jRcVOiTq6amkCz4.SFp9eTe3KMkQmnrG3vUq2hSEwAqf1bn0B4pdU!&#x2F;c&amp;ek&#x3D;1&amp;kp&#x3D;1&amp;pt&#x3D;0&amp;bo&#x3D;gAKpAQAAAAADFxg!&amp;tl&#x3D;1&amp;vuin&#x3D;1084350607&amp;tm&#x3D;1576328400&amp;sce&#x3D;60-2-2&amp;rf&#x3D;viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到同思远的博客" type="application/atom+xml">
   
@@ -169,7 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一部分-背景（前置知识）"><a href="#第一部分-背景（前置知识）" class="headerlink" title="第一部分 背景（前置知识）"></a>第一部分 背景（前置知识）</h1><h2 id="一-邮件发送原理："><a href="#一-邮件发送原理：" class="headerlink" title="一.邮件发送原理："></a>一.邮件发送原理：</h2><h3 id="1-邮件传输协议-SMTP协议和POP3协议"><a href="#1-邮件传输协议-SMTP协议和POP3协议" class="headerlink" title="1.邮件传输协议:SMTP协议和POP3协议"></a>1.邮件传输协议:SMTP协议和POP3协议</h3><h3 id="2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"><a href="#2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）" class="headerlink" title="2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"></a>2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）</h3><h2 id="二-邮件发送流程："><a href="#二-邮件发送流程：" class="headerlink" title="二.邮件发送流程："></a>二.邮件发送流程：</h2><p><img src="" alt="alt "> </p>
+        <h1 id="第一部分-背景（前置知识）"><a href="#第一部分-背景（前置知识）" class="headerlink" title="第一部分 背景（前置知识）"></a>第一部分 背景（前置知识）</h1><h2 id="一-邮件发送原理："><a href="#一-邮件发送原理：" class="headerlink" title="一.邮件发送原理："></a>一.邮件发送原理：</h2><h3 id="1-邮件传输协议-SMTP协议和POP3协议"><a href="#1-邮件传输协议-SMTP协议和POP3协议" class="headerlink" title="1.邮件传输协议:SMTP协议和POP3协议"></a>1.邮件传输协议:SMTP协议和POP3协议</h3><h3 id="2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"><a href="#2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）" class="headerlink" title="2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"></a>2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）</h3><h2 id="二-邮件发送流程："><a href="#二-邮件发送流程：" class="headerlink" title="二.邮件发送流程："></a>二.邮件发送流程：</h2><p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk0EarqPloBkkxkCy3I6JOJrPNIHXyX3ap3jRcVOiTq6amkCz4.SFp9eTe3KMkQmnrG3vUq2hSEwAqf1bn0B4pdU!/c&ek=1&kp=1&pt=0&bo=gAKpAQAAAAADFxg!&tl=1&vuin=1084350607&tm=1576328400&sce=60-2-2&rf=viewer_4" alt="alt "> </p>
 <h2 id="三-Spring-Boot介绍"><a href="#三-Spring-Boot介绍" class="headerlink" title="三.Spring Boot介绍"></a>三.Spring Boot介绍</h2><h3 id="1-约定大于配置"><a href="#1-约定大于配置" class="headerlink" title="1.约定大于配置"></a>1.约定大于配置</h3><h3 id="2-简单快速开发"><a href="#2-简单快速开发" class="headerlink" title="2.简单快速开发"></a>2.简单快速开发</h3><h3 id="3-强大的生态链"><a href="#3-强大的生态链" class="headerlink" title="3.强大的生态链"></a>3.强大的生态链</h3><h3 id="4-Spring-boot和发送邮件："><a href="#4-Spring-boot和发送邮件：" class="headerlink" title="4.Spring boot和发送邮件："></a>4.Spring boot和发送邮件：</h3><pre><code>Spring boot发送邮件简化了操作的过程</code></pre><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
       
 
