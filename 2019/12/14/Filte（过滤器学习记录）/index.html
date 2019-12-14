@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 欢迎来到同思远的博客</title>
+  <title>Filte（过滤器学习记录） | 欢迎来到同思远的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到同思远的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+  <meta name="description" content="一.Filter是什么  Filter叫做拦截器，用于拦截预处理的request.Filter不是一个servlet，它不能产生一个response，他能在request到达servlet之前预处理request，也可以在response离开servlet  时处理response  filter是一个类，在写filter时我们需要继承java.servlet.Filter接口来实现一个filte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Filte（过滤器学习记录）">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;14&#x2F;Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到同思远的博客">
-<meta property="og:description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
+<meta property="og:description" content="一.Filter是什么  Filter叫做拦截器，用于拦截预处理的request.Filter不是一个servlet，它不能产生一个response，他能在request到达servlet之前预处理request，也可以在response离开servlet  时处理response  filter是一个类，在写filter时我们需要继承java.servlet.Filter接口来实现一个filte">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http:&#x2F;&#x2F;a1.qpic.cn&#x2F;psc?&#x2F;V12mUYwE30s05c&#x2F;1nSAZ*B78DPTEG5idIpYkzuhO7gPXrm*.xwxeKh.EbPedY.urQh4ujXWKI8n08BzRywOuvvtsShbqgvzChWEfIgWMaxRAiFhElW3MJRzaZQ!&#x2F;c&amp;ek&#x3D;1&amp;kp&#x3D;1&amp;pt&#x3D;0&amp;bo&#x3D;gALpAAAAAAADF1k!&amp;tl&#x3D;1&amp;vuin&#x3D;1084350607&amp;tm&#x3D;1576328400&amp;sce&#x3D;60-2-2&amp;rf&#x3D;viewer_4">
+<meta property="og:image" content="http:&#x2F;&#x2F;a1.qpic.cn&#x2F;psc?&#x2F;V12mUYwE30s05c&#x2F;1nSAZ*B78DPTEG5idIpYk6xxg0gTsYcJH9NfIRTDQNj5P541*PPM84ScQjtlWt47camaKdWFtjZ914NFgWHWUcYtaNMtKhrfe*grsU5P9sA!&#x2F;c&amp;ek&#x3D;1&amp;kp&#x3D;1&amp;pt&#x3D;0&amp;bo&#x3D;*gEEAgAAAAADF8s!&amp;tl&#x3D;1&amp;vuin&#x3D;1084350607&amp;tm&#x3D;1576332000&amp;sce&#x3D;60-2-2&amp;rf&#x3D;viewer_4">
+<meta property="og:image" content="http:&#x2F;&#x2F;a1.qpic.cn&#x2F;psc?&#x2F;V12mUYwE30s05c&#x2F;1nSAZ*B78DPTEG5idIpYk2cJJKyMgWX9p*jCxUFfKFE51itHyuZcmbNcG6AF6FjukrF0WfBiZ.65cKuG1wh38AqW0gOsBUPCM7R3PBfwpM4!&#x2F;c&amp;ek&#x3D;1&amp;kp&#x3D;1&amp;pt&#x3D;0&amp;bo&#x3D;gAIEAQAAAAADJ4U!&amp;tl&#x3D;1&amp;vuin&#x3D;1084350607&amp;tm&#x3D;1576332000&amp;sce&#x3D;60-2-2&amp;rf&#x3D;viewer_4">
+<meta property="article:published_time" content="2019-12-14T13:25:20.000Z">
+<meta property="article:modified_time" content="2019-12-14T14:57:24.393Z">
 <meta property="article:author" content="Tsy">
 <meta property="article:tag" content="学习，开源，技术，分享">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;a1.qpic.cn&#x2F;psc?&#x2F;V12mUYwE30s05c&#x2F;1nSAZ*B78DPTEG5idIpYkzuhO7gPXrm*.xwxeKh.EbPedY.urQh4ujXWKI8n08BzRywOuvvtsShbqgvzChWEfIgWMaxRAiFhElW3MJRzaZQ!&#x2F;c&amp;ek&#x3D;1&amp;kp&#x3D;1&amp;pt&#x3D;0&amp;bo&#x3D;gALpAAAAAAADF1k!&amp;tl&#x3D;1&amp;vuin&#x3D;1084350607&amp;tm&#x3D;1576328400&amp;sce&#x3D;60-2-2&amp;rf&#x3D;viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到同思远的博客" type="application/atom+xml">
   
@@ -147,295 +153,226 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Filte（过滤器学习记录）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2019-12-14T15:15:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/">Listener(监听器)</a>
+    <h1 class="article-title" itemprop="name">
+      Filte（过滤器学习记录）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2019-12-14T15:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/">Filter分IP统计访问次数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2019-12-14T14:34:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Chrome浏览器打开是毒霸浏览器解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2019-12-14T14:22:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">tomcat无法启动，端口被占用解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/" class="archive-article-date">
+        
+        <a href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/" class="archive-article-date">
   	<time datetime="2019-12-14T13:25:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/">Filte（过滤器学习记录）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-Filter是什么"><a href="#一-Filter是什么" class="headerlink" title="一.Filter是什么"></a>一.Filter是什么</h1><p>  Filter叫做拦截器，用于拦截预处理的request.Filter不是一个servlet，它不能产生一个response，他能在request到达servlet之前预处理request，也可以在response离开servlet<br>  时处理response<br>  filter是一个类，在写filter时我们需要继承java.servlet.Filter接口来实现一个filter  </p>
+<p>  例如：  </p>
+<p>  <img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkzuhO7gPXrm*.xwxeKh.EbPedY.urQh4ujXWKI8n08BzRywOuvvtsShbqgvzChWEfIgWMaxRAiFhElW3MJRzaZQ!/c&ek=1&kp=1&pt=0&bo=gALpAAAAAAADF1k!&tl=1&vuin=1084350607&tm=1576328400&sce=60-2-2&rf=viewer_4" alt="alt"></p>
+<p>我们可以看到Filter接口中提供了三个方法</p>
+<ul>
+<li>init() 初始化</li>
+<li>doFilter() 进行拦截</li>
+<li>destroy()  自毁</li>
+</ul>
+<h1 id="二-Filte四种拦截方式："><a href="#二-Filte四种拦截方式：" class="headerlink" title="二.Filte四种拦截方式："></a>二.Filte四种拦截方式：</h1><p>如果需要设置Filte拦截方式，我们需要在web项目中的XML文件中进行配置（同Servlet）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;tsy.filter.java&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 设置需要拦截的Servlet --&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;AServlet&lt;&#x2F;url-pattern&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 还可以指定Servlet进行过滤 --&gt;</span><br><span class="line">	&lt;servlet-name&gt;AServlet&lt;&#x2F;servlet-name&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- 默认问REQUEST拦截方式 --&gt;		</span><br><span class="line">	&lt;dispatcher&gt;REQUEST&lt;&#x2F;dispatcher&gt;</span><br><span class="line">	&lt;dispatcher&gt;FORWARD&lt;&#x2F;dispatcher&gt;</span><br><span class="line">	&lt;dispatcher&gt;INCLUDE&lt;&#x2F;dispatcher&gt;</span><br><span class="line">	&lt;dispatcher&gt;ERROR&lt;&#x2F;dispatcher&gt;	</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>request（默认） </li>
+<li>forward（拦截转发）</li>
+<li>include（拦截包含）</li>
+<li>error（拦截错误页面）</li>
+</ul>
+<h1 id="三-使用Filter-mapping控制多个Filter的执行顺序"><a href="#三-使用Filter-mapping控制多个Filter的执行顺序" class="headerlink" title="三.使用Filter-mapping控制多个Filter的执行顺序"></a>三.使用Filter-mapping控制多个Filter的执行顺序</h1><p><code>&lt;filter-mappin&gt;</code>中的配置顺序决定了过滤器的执行顺序！<br>接下来进行演示，我创建了一个名为FilterStudy的动态web项目，在src下写入俩个filter来进行演示执行顺序，分别叫做AFilter和BFilter  </p>
+<p>在创建时我将路径改为/*  </p>
+<p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk6xxg0gTsYcJH9NfIRTDQNj5P541*PPM84ScQjtlWt47camaKdWFtjZ914NFgWHWUcYtaNMtKhrfe*grsU5P9sA!/c&ek=1&kp=1&pt=0&bo=*gEEAgAAAAADF8s!&tl=1&vuin=1084350607&tm=1576332000&sce=60-2-2&rf=viewer_4" alt="alt"></p>
+<p>接下来我们得到了俩个Filter,AFilter输出AFilter,BFilter同理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class AFilter implements Filter &#123;</span><br><span class="line"></span><br><span class="line">	public void destroy() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException &#123;	</span><br><span class="line">		System.out.println(&quot;AFilter&quot;);</span><br><span class="line">		chain.doFilter(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">	public void init(FilterConfig fConfig) throws ServletException &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>紧接着我们在XML文件中配置Filter如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;tsy.x.AFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;Text.html&lt;&#x2F;url-pattern&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;BFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;tsy.x.BFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;BFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;Text.html&lt;&#x2F;url-pattern&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看出我们先配置了AFilter，然后再配置了BFilter  </p>
+<p>在我访问Text.html后看到控制台输出如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AFilter</span><br><span class="line">BFilter</span><br><span class="line">AFilter</span><br><span class="line">BFilter</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="总结：Filter的执行顺序由-lt-filter-mapping-gt-中配置filter的顺序决定"><a href="#总结：Filter的执行顺序由-lt-filter-mapping-gt-中配置filter的顺序决定" class="headerlink" title="总结：Filter的执行顺序由&lt;filter-mapping&gt;中配置filter的顺序决定"></a>总结：Filter的执行顺序由<code>&lt;filter-mapping&gt;</code>中配置filter的顺序决定</h2><h1 id="四-过滤器的应用场景："><a href="#四-过滤器的应用场景：" class="headerlink" title="四.过滤器的应用场景："></a>四.过滤器的应用场景：</h1><ul>
+<li>执行目标资源之前做预处理工作，例如Servlet设置编码，可以把设置编码的工作放在Filter中</li>
+<li>通过条件判断是否放行，例如检验当前用户是否已经登录，或者用户IP是否被禁用</li>
+<li>在目标资源执行后，做后续的特殊处理工作</li>
+</ul>
+<h1 id="五-过滤器调用资源方式："><a href="#五-过滤器调用资源方式：" class="headerlink" title="五.过滤器调用资源方式："></a>五.过滤器调用资源方式：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   &lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 设置需要拦截的Servlet --&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;AServlet&lt;&#x2F;url-pattern&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 还可以指定Servlet进行过滤 --&gt;</span><br><span class="line">	&lt;servlet-name&gt;AServlet&lt;&#x2F;servlet-name&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="六-Filter中的相关方法和相关类"><a href="#六-Filter中的相关方法和相关类" class="headerlink" title="六.Filter中的相关方法和相关类:"></a>六.Filter中的相关方法和相关类:</h1><p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk2cJJKyMgWX9p*jCxUFfKFE51itHyuZcmbNcG6AF6FjukrF0WfBiZ.65cKuG1wh38AqW0gOsBUPCM7R3PBfwpM4!/c&ek=1&kp=1&pt=0&bo=gAIEAQAAAAADJ4U!&tl=1&vuin=1084350607&tm=1576332000&sce=60-2-2&rf=viewer_4" alt="alt"></p>
+<h1 id="实践案例请查看博客“Filter分IP统计访问次数”"><a href="#实践案例请查看博客“Filter分IP统计访问次数”" class="headerlink" title="实践案例请查看博客“Filter分IP统计访问次数”"></a>实践案例请查看博客“Filter分IP统计访问次数”</h1>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk61vBw7Y7P3n59Y8ThjyVVgtNOpBg6PYBfsHcivwMUiCxpMccLtLgPRDrFAJZxHdXJ7KHzPzZIxClspESFjP8m4!/b&amp;bo=gwG8AQAAAAADFw0!&amp;rf=viewer_4">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkwuX7imdm5Pyj.x3.6l53dRBgdPKQq.Oh1QVI5J4iKmmr5gwR9Gq8vUHwlZPLsr23GJ9ZeIC5xQKhG.EqxvZs*I!/b&amp;bo=ZwFiAQAAAAADByc!&amp;rf=viewer_4">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/" class="archive-article-date">
-  	<time datetime="2019-12-14T13:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          tomcat无法启动，端口被占用解决方案
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">自我反思</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/">自我反思</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-Filter是什么"><span class="toc-number">1.</span> <span class="toc-text">一.Filter是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-Filte四种拦截方式："><span class="toc-number">2.</span> <span class="toc-text">二.Filte四种拦截方式：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-使用Filter-mapping控制多个Filter的执行顺序"><span class="toc-number">3.</span> <span class="toc-text">三.使用Filter-mapping控制多个Filter的执行顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#总结：Filter的执行顺序由-lt-filter-mapping-gt-中配置filter的顺序决定"><span class="toc-number">3.1.</span> <span class="toc-text">总结：Filter的执行顺序由&lt;filter-mapping&gt;中配置filter的顺序决定</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-过滤器的应用场景："><span class="toc-number">4.</span> <span class="toc-text">四.过滤器的应用场景：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-过滤器调用资源方式："><span class="toc-number">5.</span> <span class="toc-text">五.过滤器调用资源方式：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六-Filter中的相关方法和相关类"><span class="toc-number">6.</span> <span class="toc-text">六.Filter中的相关方法和相关类:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实践案例请查看博客“Filter分IP统计访问次数”"><span class="toc-number">7.</span> <span class="toc-text">实践案例请查看博客“Filter分IP统计访问次数”</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/">Servlet实现验证码</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:13:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">Spring boot 邮件发送实战记录</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/" class="archive-article-date">
-  	<time datetime="2019-12-13T13:01:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/">VScode编辑Html文件实现实时预览</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/" class="archive-article-date">
-  	<time datetime="2019-12-13T09:41:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">Base64多次加密和解密后不是初始消息问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -459,8 +396,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

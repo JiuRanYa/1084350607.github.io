@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 欢迎来到同思远的博客</title>
+  <title>Listener(监听器) | 欢迎来到同思远的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到同思远的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+  <meta name="description" content="一. 什么叫做Listener（监听器）Javaweb三大组件： Servlet Listener Filter  监听器： 他是一个接口，内容由设计者实现 他需要注册，例如注册在按钮上 监听器中的方法，会在特殊事件发生时被调用  观察者： 事件源 小偷    事件 偷东西   监听器 警察 监听器的方法：抓捕    &amp;emsp;监听器注册在事件源上，等待事件的发生后执行监听器功能 二.监听器概述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Listener(监听器)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;14&#x2F;Listener-%E7%9B%91%E5%90%AC%E5%99%A8&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到同思远的博客">
-<meta property="og:description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
+<meta property="og:description" content="一. 什么叫做Listener（监听器）Javaweb三大组件： Servlet Listener Filter  监听器： 他是一个接口，内容由设计者实现 他需要注册，例如注册在按钮上 监听器中的方法，会在特殊事件发生时被调用  观察者： 事件源 小偷    事件 偷东西   监听器 警察 监听器的方法：抓捕    &amp;emsp;监听器注册在事件源上，等待事件的发生后执行监听器功能 二.监听器概述">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-14T15:15:52.000Z">
+<meta property="article:modified_time" content="2019-12-14T16:04:14.378Z">
 <meta property="article:author" content="Tsy">
 <meta property="article:tag" content="学习，开源，技术，分享">
 <meta name="twitter:card" content="summary">
@@ -147,295 +149,249 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Listener-监听器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Listener(监听器)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/" class="archive-article-date">
+
+        
+        <a href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/" class="archive-article-date">
   	<time datetime="2019-12-14T15:15:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/">Listener(监听器)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-什么叫做Listener（监听器）"><a href="#一-什么叫做Listener（监听器）" class="headerlink" title="一. 什么叫做Listener（监听器）"></a>一. 什么叫做Listener（监听器）</h1><h2 id="Javaweb三大组件："><a href="#Javaweb三大组件：" class="headerlink" title="Javaweb三大组件："></a>Javaweb三大组件：</h2><ul>
+<li>Servlet</li>
+<li>Listener</li>
+<li>Filter</li>
+</ul>
+<h2 id="监听器："><a href="#监听器：" class="headerlink" title="监听器："></a>监听器：</h2><ul>
+<li>他是一个接口，内容由设计者实现</li>
+<li>他需要注册，例如注册在按钮上</li>
+<li>监听器中的方法，会在特殊事件发生时被调用</li>
+</ul>
+<h2 id="观察者："><a href="#观察者：" class="headerlink" title="观察者："></a>观察者：</h2><ul>
+<li>事件源<ul>
+<li>小偷 </li>
+</ul>
+</li>
+<li>事件<ul>
+<li>偷东西</li>
+</ul>
+</li>
+<li>监听器<ul>
+<li>警察</li>
+<li>监听器的方法：抓捕</li>
+</ul>
+</li>
+</ul>
+<p>&emsp;监听器注册在事件源上，等待事件的发生后执行监听器功能</p>
+<h1 id="二-监听器概述以及生命周期监听器"><a href="#二-监听器概述以及生命周期监听器" class="headerlink" title="二.监听器概述以及生命周期监听器"></a>二.监听器概述以及生命周期监听器</h1><h2 id="—————————-Javaweb中的监听器————————–"><a href="#—————————-Javaweb中的监听器————————–" class="headerlink" title="—————————-Javaweb中的监听器————————–"></a>—————————-Javaweb中的监听器————————–</h2><h2 id="1-事件源：三大域-（域对象的作用：保存数据，获取数据，共享数据）："><a href="#1-事件源：三大域-（域对象的作用：保存数据，获取数据，共享数据）：" class="headerlink" title="1.事件源：三大域  （域对象的作用：保存数据，获取数据，共享数据）："></a>1.事件源：三大域  （域对象的作用：保存数据，获取数据，共享数据）：</h2><ul>
+<li><p>ServletContext（上下文）</p>
+<ul>
+<li>生死监听：ServletContextListener<ul>
+<li>ServletContext出生调用：void contextInitialized(ServletContextEvent sce)  </li>
+<li>ServletContext死亡调用：void contextDestroyed(ServletContextEvent sce)</li>
+</ul>
+</li>
+<li>属性监听：ServletContextAttributeListenr<ul>
+<li>ServletContext设置属性调用：attributeAdded(ServletContextAttributeEvent scab)</li>
+<li>ServletContext替换属性调用：attributeRemoved(ServletContextAttributeEvent scab) </li>
+<li>ServletContext移除属性调用：attributeReplaced(ServletContextAttributeEvent scab) </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>HttpSession：request.getSession()方法调用后网站才会生成Session</p>
+<ul>
+<li>生死监听：HttpSessionListener<ul>
+<li>他有俩个方法，一个出生调用，一个死亡调用</li>
+</ul>
+</li>
+<li>属性监听：HttpSessionAttributeListenr<ul>
+<li>他有三个方法set，一个在设置属性调用，一个在替换属性调用，一个在移除属性调用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ServletRequest</p>
+<ul>
+<li>生死监听：ServletRequestListener<ul>
+<li>他有俩个方法，一个出生调用，一个死亡调用</li>
+</ul>
+</li>
+<li>属性监听：ServletRequestAttributeListenr<ul>
+<li>他有三个方法set，一个在设置属性调用，一个在替换属性调用，一个在移除属性调用  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext-方法；"><a href="#2-三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext-方法；" class="headerlink" title="2.三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext()方法；"></a>2.三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext()方法；</h2><h1 id="三-JavaWeb中完成编写监听器："><a href="#三-JavaWeb中完成编写监听器：" class="headerlink" title="三.JavaWeb中完成编写监听器："></a>三.JavaWeb中完成编写监听器：</h1><h2 id="1-写一个监听器类-要求必须去实现某个监听器接口"><a href="#1-写一个监听器类-要求必须去实现某个监听器接口" class="headerlink" title="1.写一个监听器类:要求必须去实现某个监听器接口"></a>1.写一个监听器类:要求必须去实现某个监听器接口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">            实现ServletContextListener生死监听  </span><br><span class="line">    ！可以在这个监听器存放一些Tomcat启动时就要完成的代码！</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line">public class AListener implements ServletContextListener &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void contextDestroyed(ServletContextEvent arg0) &#123;</span><br><span class="line">		System.out.println(&quot;死之前&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void contextInitialized(ServletContextEvent arg0) &#123;</span><br><span class="line">		System.out.println(&quot;出生后&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="在XML文件中配置如下：-只需要指定类名"><a href="#在XML文件中配置如下：-只需要指定类名" class="headerlink" title="在XML文件中配置如下：(只需要指定类名)"></a>在XML文件中配置如下：(只需要指定类名)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;listener&gt;</span><br><span class="line">	&lt;listener-class&gt;tsy.c.AListener&lt;&#x2F;listener-class&gt;</span><br><span class="line">&lt;&#x2F;listener&gt;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk61vBw7Y7P3n59Y8ThjyVVgtNOpBg6PYBfsHcivwMUiCxpMccLtLgPRDrFAJZxHdXJ7KHzPzZIxClspESFjP8m4!/b&amp;bo=gwG8AQAAAAADFw0!&amp;rf=viewer_4">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkwuX7imdm5Pyj.x3.6l53dRBgdPKQq.Oh1QVI5J4iKmmr5gwR9Gq8vUHwlZPLsr23GJ9ZeIC5xQKhG.EqxvZs*I!/b&amp;bo=ZwFiAQAAAAADByc!&amp;rf=viewer_4">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2019-12-14T15:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Filter分IP统计访问次数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/">Filter分IP统计访问次数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-什么叫做Listener（监听器）"><span class="toc-number">1.</span> <span class="toc-text">一. 什么叫做Listener（监听器）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Javaweb三大组件："><span class="toc-number">1.1.</span> <span class="toc-text">Javaweb三大组件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#监听器："><span class="toc-number">1.2.</span> <span class="toc-text">监听器：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#观察者："><span class="toc-number">1.3.</span> <span class="toc-text">观察者：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-监听器概述以及生命周期监听器"><span class="toc-number">2.</span> <span class="toc-text">二.监听器概述以及生命周期监听器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#—————————-Javaweb中的监听器————————–"><span class="toc-number">2.1.</span> <span class="toc-text">—————————-Javaweb中的监听器————————–</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-事件源：三大域-（域对象的作用：保存数据，获取数据，共享数据）："><span class="toc-number">2.2.</span> <span class="toc-text">1.事件源：三大域  （域对象的作用：保存数据，获取数据，共享数据）：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext-方法；"><span class="toc-number">2.3.</span> <span class="toc-text">2.三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext()方法；</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-JavaWeb中完成编写监听器："><span class="toc-number">3.</span> <span class="toc-text">三.JavaWeb中完成编写监听器：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-写一个监听器类-要求必须去实现某个监听器接口"><span class="toc-number">3.1.</span> <span class="toc-text">1.写一个监听器类:要求必须去实现某个监听器接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在XML文件中配置如下：-只需要指定类名"><span class="toc-number">3.2.</span> <span class="toc-text">在XML文件中配置如下：(只需要指定类名)</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2019-12-14T14:34:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Chrome浏览器打开是毒霸浏览器解决方案</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2019-12-14T14:22:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">tomcat无法启动，端口被占用解决方案</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2019-12-14T13:25:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/">Filte（过滤器学习记录）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/" class="archive-article-date">
-  	<time datetime="2019-12-14T13:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/">自我反思</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/">Servlet实现验证码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:13:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">Spring boot 邮件发送实战记录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/" class="archive-article-date">
-  	<time datetime="2019-12-13T13:01:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/">VScode编辑Html文件实现实时预览</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/" class="archive-article-date">
-  	<time datetime="2019-12-13T09:41:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">Base64多次加密和解密后不是初始消息问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -459,8 +415,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
