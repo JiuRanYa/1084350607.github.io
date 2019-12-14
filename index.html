@@ -430,7 +430,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在我启动tomcat的时候，出现以下报错</p>
-<p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkzD4Jg.YshM9SXGTaGoxb5MgWY2yrh*56UWmyIOUBipkRIeyCrOBHCBHpyf7bMvwFwuh8NIyEDBUG98zWLfvGDE!/c&ek=1&kp=1&pt=0&bo=egGQAQAAAAADF9g!&tl=1&vuin=1084350607&tm=1576332000&sce=60-2-2&rf=viewer_4" alt="alt"></p>
+<p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkzD4Jg.YshM9SXGTaGoxb5MgWY2yrh*56UWmyIOUBipk5G9craP4sWPuEzfXQC07XD14hM4K*1RK76.8SwBlz04!/b&bo=egGQAQAAAAADF9g!&rf=viewer_4" alt="alt"></p>
 <p>原因是tomcat的8080端口被占用</p>
 <h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><h2 id="1-在cmd中输入netstat-ano"><a href="#1-在cmd中输入netstat-ano" class="headerlink" title="1.在cmd中输入netstat -ano"></a>1.在cmd中输入netstat -ano</h2><h2 id="2-在端口列表中找到8080端口对应的PID"><a href="#2-在端口列表中找到8080端口对应的PID" class="headerlink" title="2.在端口列表中找到8080端口对应的PID"></a>2.在端口列表中找到8080端口对应的PID</h2><h2 id="3-在任务管理器服务页面关闭PID对应进程"><a href="#3-在任务管理器服务页面关闭PID对应进程" class="headerlink" title="3.在任务管理器服务页面关闭PID对应进程"></a>3.在任务管理器服务页面关闭PID对应进程</h2>
       
@@ -496,7 +496,7 @@
       
         <h1 id="一-Filter是什么"><a href="#一-Filter是什么" class="headerlink" title="一.Filter是什么"></a>一.Filter是什么</h1><p>  Filter叫做拦截器，用于拦截预处理的request.Filter不是一个servlet，它不能产生一个response，他能在request到达servlet之前预处理request，也可以在response离开servlet<br>  时处理response<br>  filter是一个类，在写filter时我们需要继承java.servlet.Filter接口来实现一个filter  </p>
 <p>  例如：  </p>
-<p>  <img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkzuhO7gPXrm*.xwxeKh.EbPedY.urQh4ujXWKI8n08BzRywOuvvtsShbqgvzChWEfIgWMaxRAiFhElW3MJRzaZQ!/c&ek=1&kp=1&pt=0&bo=gALpAAAAAAADF1k!&tl=1&vuin=1084350607&tm=1576328400&sce=60-2-2&rf=viewer_4" alt="alt"></p>
+<p>  <img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkzuhO7gPXrm*.xwxeKh.EbPedY.urQh4ujXWKI8n08BzsKPoSo35PFxiXcOte4qzEXULw4y7E2tjAXO9BJ4q2SA!/b&bo=gALpAAAAAAADB0k!&rf=viewer_4" alt="alt"></p>
 <p>我们可以看到Filter接口中提供了三个方法</p>
 <ul>
 <li>init() 初始化</li>
@@ -513,7 +513,7 @@
 </ul>
 <h1 id="三-使用Filter-mapping控制多个Filter的执行顺序"><a href="#三-使用Filter-mapping控制多个Filter的执行顺序" class="headerlink" title="三.使用Filter-mapping控制多个Filter的执行顺序"></a>三.使用Filter-mapping控制多个Filter的执行顺序</h1><p><code>&lt;filter-mappin&gt;</code>中的配置顺序决定了过滤器的执行顺序！<br>接下来进行演示，我创建了一个名为FilterStudy的动态web项目，在src下写入俩个filter来进行演示执行顺序，分别叫做AFilter和BFilter  </p>
 <p>在创建时我将路径改为/*  </p>
-<p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk6xxg0gTsYcJH9NfIRTDQNj5P541*PPM84ScQjtlWt47camaKdWFtjZ914NFgWHWUcYtaNMtKhrfe*grsU5P9sA!/c&ek=1&kp=1&pt=0&bo=*gEEAgAAAAADF8s!&tl=1&vuin=1084350607&tm=1576332000&sce=60-2-2&rf=viewer_4" alt="alt"></p>
+<p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk6xxg0gTsYcJH9NfIRTDQNj5P541*PPM84ScQjtlWt47sfwLRQeWiDBwpBjYae7MALKwR0hk6kTFR55LD9C0Gs0!/b&bo=*gEEAgAAAAADF8s!&rf=viewer_4" alt="alt"></p>
 <p>接下来我们得到了俩个Filter,AFilter输出AFilter,BFilter同理</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class AFilter implements Filter &#123;</span><br><span class="line"></span><br><span class="line">	public void destroy() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException &#123;	</span><br><span class="line">		System.out.println(&quot;AFilter&quot;);</span><br><span class="line">		chain.doFilter(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">	public void init(FilterConfig fConfig) throws ServletException &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -533,7 +533,7 @@
 <h1 id="五-过滤器调用资源方式："><a href="#五-过滤器调用资源方式：" class="headerlink" title="五.过滤器调用资源方式："></a>五.过滤器调用资源方式：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   &lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 设置需要拦截的Servlet --&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;AServlet&lt;&#x2F;url-pattern&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 还可以指定Servlet进行过滤 --&gt;</span><br><span class="line">	&lt;servlet-name&gt;AServlet&lt;&#x2F;servlet-name&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
 
 
-<h1 id="六-Filter中的相关方法和相关类"><a href="#六-Filter中的相关方法和相关类" class="headerlink" title="六.Filter中的相关方法和相关类:"></a>六.Filter中的相关方法和相关类:</h1><p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk2cJJKyMgWX9p*jCxUFfKFE51itHyuZcmbNcG6AF6FjukrF0WfBiZ.65cKuG1wh38AqW0gOsBUPCM7R3PBfwpM4!/c&ek=1&kp=1&pt=0&bo=gAIEAQAAAAADJ4U!&tl=1&vuin=1084350607&tm=1576332000&sce=60-2-2&rf=viewer_4" alt="alt"></p>
+<h1 id="六-Filter中的相关方法和相关类"><a href="#六-Filter中的相关方法和相关类" class="headerlink" title="六.Filter中的相关方法和相关类:"></a>六.Filter中的相关方法和相关类:</h1><p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk2cJJKyMgWX9p*jCxUFfKFE51itHyuZcmbNcG6AF6FjuEpZNvokgkHGgMzC0I6KfWGS5LQYISsL1dS.YD*SP.wc!/b&bo=gAIEAQAAAAADJ4U!&rf=viewer_4" alt="alt"></p>
 <h1 id="实践案例请查看博客“Filter分IP统计访问次数”"><a href="#实践案例请查看博客“Filter分IP统计访问次数”" class="headerlink" title="实践案例请查看博客“Filter分IP统计访问次数”"></a>实践案例请查看博客“Filter分IP统计访问次数”</h1>
       
 
