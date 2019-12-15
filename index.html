@@ -149,6 +149,296 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java类集框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6/">Java类集框架</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6/" class="archive-article-date">
+  	<time datetime="2019-12-15T09:43:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-Collection父接口"><a href="#一-Collection父接口" class="headerlink" title="一. Collection父接口"></a>一. Collection父接口</h1><h2 id="java-util-Collection是单值集合操作的最大父接口"><a href="#java-util-Collection是单值集合操作的最大父接口" class="headerlink" title="java.util.Collection是单值集合操作的最大父接口"></a>java.util.Collection是单值集合操作的最大父接口</h2><ul>
+<li>所有通用的Collection实现类（通常通过其子接口间接实现Collection ）应该提供两个“标准”构造函数：一个void（无参数）构造函数，它创建一个空集合，以及一个具有单个参数类型的构造函数Collection ，它创建一个与其参数相同的元素的新集合</li>
+</ul>
+<h1 id="二-常见的几个核心接口"><a href="#二-常见的几个核心接口" class="headerlink" title="二. 常见的几个核心接口"></a>二. 常见的几个核心接口</h1><ul>
+<li>List（允许保存重复的元素数据）三个子类：<ul>
+<li>ArrayList<br><img src="http://q2jp0zc7u.bkt.clouddn.com/ArrayList.png" alt="alt"></li>
+<li>Vector</li>
+<li>LinkedList </li>
+</ul>
+</li>
+</ul>
+<p>Array继承关系如下：<br><img src="http://q2jp0zc7u.bkt.clouddn.com/sce.png" alt="alt"></p>
+<h2 id="List中也提供了of-的静态方法可以直接使用，操作如下"><a href="#List中也提供了of-的静态方法可以直接使用，操作如下" class="headerlink" title="List中也提供了of 的静态方法可以直接使用，操作如下"></a>List中也提供了of 的静态方法可以直接使用，操作如下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class leiji &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		ArrayList&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">		list.add(&quot;你好&quot;);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		</span><br><span class="line">		List&lt;String&gt; list2 &#x3D; List.of(&quot;hello&quot;,&quot;world&quot;);</span><br><span class="line">		System.out.println(list2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注释:ArrayList初始长度为10，当长度不够时，ArrayList的长度将翻倍增长:10-&gt;20-&gt;40-&gt;80</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java为什么要在类中声明一个无参构造方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/Java%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/">Java为什么要在类中声明一个无参构造方法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/Java%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2019-12-15T08:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="java默认的在调用子类构造方法前先调用父类的构造方法，如果你没有指定调用父类的哪个构造方法，那么java默认调用父类无参数的构造方法"><a href="#java默认的在调用子类构造方法前先调用父类的构造方法，如果你没有指定调用父类的哪个构造方法，那么java默认调用父类无参数的构造方法" class="headerlink" title="java默认的在调用子类构造方法前先调用父类的构造方法，如果你没有指定调用父类的哪个构造方法，那么java默认调用父类无参数的构造方法"></a>java默认的在调用子类构造方法前先调用父类的构造方法，如果你没有指定调用父类的哪个构造方法，那么java默认调用父类无参数的构造方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class person implements Serializable&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	public person() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	public person(String name ,int age) &#123;</span><br><span class="line">		this.name &#x3D; name ;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class student extends person&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	private long ID;</span><br><span class="line">	public student(String name ,int age, long ID) &#123;</span><br><span class="line">		super(name,age);</span><br><span class="line">		this.ID &#x3D; ID;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="子类默认调用父类的无参构造方法，如果没有无参构造方法则会报错，没用无参构造的时候要通过super指定父类的构造方法"><a href="#子类默认调用父类的无参构造方法，如果没有无参构造方法则会报错，没用无参构造的时候要通过super指定父类的构造方法" class="headerlink" title="子类默认调用父类的无参构造方法，如果没有无参构造方法则会报错，没用无参构造的时候要通过super指定父类的构造方法"></a>子类默认调用父类的无参构造方法，如果没有无参构造方法则会报错，没用无参构造的时候要通过super指定父类的构造方法</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/15/Java%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java对象序列化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/Java%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96/">Java对象序列化</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/Java%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2019-12-15T08:21:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-Java对象序列化的基本概念："><a href="#一-Java对象序列化的基本概念：" class="headerlink" title="一.Java对象序列化的基本概念："></a>一.Java对象序列化的基本概念：</h1><h2 id="1-序列化的概念"><a href="#1-序列化的概念" class="headerlink" title="1.序列化的概念"></a>1.序列化的概念</h2><h3 id="所谓的对象序列化值得是将内存中保存的对象以二进制数据流的形式进行处理，可以实现对象的保存或者传输"><a href="#所谓的对象序列化值得是将内存中保存的对象以二进制数据流的形式进行处理，可以实现对象的保存或者传输" class="headerlink" title="所谓的对象序列化值得是将内存中保存的对象以二进制数据流的形式进行处理，可以实现对象的保存或者传输"></a>所谓的对象序列化值得是将内存中保存的对象以二进制数据流的形式进行处理，可以实现对象的保存或者传输</h3><h3 id="对象序列化是指一个对象产生之后是在内存中开辟了一个存储空间，方便存储"><a href="#对象序列化是指一个对象产生之后是在内存中开辟了一个存储空间，方便存储" class="headerlink" title="对象序列化是指一个对象产生之后是在内存中开辟了一个存储空间，方便存储"></a>对象序列化是指一个对象产生之后是在内存中开辟了一个存储空间，方便存储</h3><h3 id="把一个对象变成二进制数据量的一种方式，通过对象序列化可以实现对象的传输或存储"><a href="#把一个对象变成二进制数据量的一种方式，通过对象序列化可以实现对象的传输或存储" class="headerlink" title="把一个对象变成二进制数据量的一种方式，通过对象序列化可以实现对象的传输或存储"></a>把一个对象变成二进制数据量的一种方式，通过对象序列化可以实现对象的传输或存储</h3><p>——————————-如果一个类想序列化，需要实现java.io.serializable接口——————————-  </p>
+<p>——————- java中有俩个描述能力的接口：<br> Cloneable（可克隆的）和Serializable(可序列化)—————</p>
+<p><img src="http://q2jp0zc7u.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720191215164221.png" alt="alt"></p>
+<h3 id="使用Java对象序列化，在保存对象时，会把其状态保存为一组字节，在未来，再将这些字节组装成对象。必须注意地是，对象序列化保存的是对象的”状态”，即它的成员变量。由此可知，对象序列化不会关注类中的静态变量"><a href="#使用Java对象序列化，在保存对象时，会把其状态保存为一组字节，在未来，再将这些字节组装成对象。必须注意地是，对象序列化保存的是对象的”状态”，即它的成员变量。由此可知，对象序列化不会关注类中的静态变量" class="headerlink" title="使用Java对象序列化，在保存对象时，会把其状态保存为一组字节，在未来，再将这些字节组装成对象。必须注意地是，对象序列化保存的是对象的”状态”，即它的成员变量。由此可知，对象序列化不会关注类中的静态变量"></a>使用Java对象序列化，在保存对象时，会把其状态保存为一组字节，在未来，再将这些字节组装成对象。必须注意地是，对象序列化保存的是对象的”状态”，即它的成员变量。由此可知，对象序列化不会关注类中的静态变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class person implements Serializable&#123;</span><br><span class="line">	</span><br><span class="line">	&#x2F;**</span><br><span class="line">	 	防止不同虚拟机环境下产生序列化反序列化问题，可以在开头添加序列编号</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	private static final long serialVersionUID &#x3D; 8561438160503754423L;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	public person() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	public person(String name ,int age) &#123;</span><br><span class="line">		this.name &#x3D; name ;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="二-序列化与反序列化处理："><a href="#二-序列化与反序列化处理：" class="headerlink" title="二. 序列化与反序列化处理："></a>二. 序列化与反序列化处理：</h1><h2 id="利用以下俩个类来完成"><a href="#利用以下俩个类来完成" class="headerlink" title="利用以下俩个类来完成"></a>利用以下俩个类来完成</h2><h2 id="注释-ObjectOutputStream将Java对象的原始数据类型和图形写入OutputStream。-可以使用ObjectInputStream读取（重构）对象。-可以通过使用流的文件来实现对象的持久存储。-如果流是网络套接字流，则可以在另一个主机上或另一个进程中重构对象。"><a href="#注释-ObjectOutputStream将Java对象的原始数据类型和图形写入OutputStream。-可以使用ObjectInputStream读取（重构）对象。-可以通过使用流的文件来实现对象的持久存储。-如果流是网络套接字流，则可以在另一个主机上或另一个进程中重构对象。" class="headerlink" title="注释: ObjectOutputStream将Java对象的原始数据类型和图形写入OutputStream。 可以使用ObjectInputStream读取（重构）对象。 可以通过使用流的文件来实现对象的持久存储。 如果流是网络套接字流，则可以在另一个主机上或另一个进程中重构对象。"></a>注释: ObjectOutputStream将Java对象的原始数据类型和图形写入OutputStream。 可以使用ObjectInputStream读取（重构）对象。 可以通过使用流的文件来实现对象的持久存储。 如果流是网络套接字流，则可以在另一个主机上或另一个进程中重构对象。</h2><h2 id="1-ObjectOutputStream-OutputStream-和无参构造"><a href="#1-ObjectOutputStream-OutputStream-和无参构造" class="headerlink" title="1.ObjectOutputStream(OutputStream)和无参构造"></a>1.ObjectOutputStream(OutputStream)和无参构造</h2><ul>
+<li>ObjectOutputStream序列化方法：void writeObject​(Object obj)  <h2 id="2-ObjectInputStream-InputStream-和无参构造"><a href="#2-ObjectInputStream-InputStream-和无参构造" class="headerlink" title="2.ObjectInputStream(InputStream)和无参构造"></a>2.ObjectInputStream(InputStream)和无参构造</h2></li>
+<li>ObjectInputStream反序列化方法：Object readObject​() <h2 id="我们可以通过OutputStream的子类FileOutputStream来通过文件实现序列化："><a href="#我们可以通过OutputStream的子类FileOutputStream来通过文件实现序列化：" class="headerlink" title="我们可以通过OutputStream的子类FileOutputStream来通过文件实现序列化："></a>我们可以通过OutputStream的子类FileOutputStream来通过文件实现序列化：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class St1 &#123;</span><br><span class="line">	&#x2F;*设置序列化保存文件*&#x2F;</span><br><span class="line">	public static final File file &#x3D; new File(&quot;d:&quot; + File.separator + &quot;xuliehua&quot;);</span><br><span class="line">	</span><br><span class="line">	&#x2F;*序列化方法*&#x2F;</span><br><span class="line">	public static void savaObject(Object obj) throws Exception&#123;</span><br><span class="line">		ObjectOutputStream oos &#x3D; new ObjectOutputStream(new FileOutputStream(file));</span><br><span class="line">		oos.writeObject(obj);</span><br><span class="line">		oos.close();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	&#x2F;*反序列化方法*&#x2F;</span><br><span class="line">	public static Object getObject() throws Exception&#123;</span><br><span class="line">		ObjectInputStream ois &#x3D; new ObjectInputStream(new FileInputStream(file));</span><br><span class="line">		Object obj &#x3D; ois.readObject();</span><br><span class="line">		ois.close();</span><br><span class="line">		return obj;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) throws Exception &#123;</span><br><span class="line">		savaObject(new person(&quot;同思远&quot;,18));</span><br><span class="line">		System.out.println(getObject());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="三-transient关键字"><a href="#三-transient关键字" class="headerlink" title="三. transient关键字"></a>三. transient关键字</h1><h2 id="默认情况下执行了序列化操作后会将类中的全部属性的内容进行序列化，但是很多情况下有些属性并不需要序列化的处理，这个时候就可以在属性定义上使用transient关键字"><a href="#默认情况下执行了序列化操作后会将类中的全部属性的内容进行序列化，但是很多情况下有些属性并不需要序列化的处理，这个时候就可以在属性定义上使用transient关键字" class="headerlink" title="默认情况下执行了序列化操作后会将类中的全部属性的内容进行序列化，但是很多情况下有些属性并不需要序列化的处理，这个时候就可以在属性定义上使用transient关键字"></a>默认情况下执行了序列化操作后会将类中的全部属性的内容进行序列化，但是很多情况下有些属性并不需要序列化的处理，这个时候就可以在属性定义上使用transient关键字</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private transient String name;</span><br></pre></td></tr></table></figure>
+<p>这时候name属性的值不会被保存下来，默认为null</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/15/Java%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java输入与输出支持" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/">java输入与输出支持</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/" class="archive-article-date">
+  	<time datetime="2019-12-15T07:55:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-System类对IO的支持"><a href="#一-System类对IO的支持" class="headerlink" title="一. System类对IO的支持"></a>一. System类对IO的支持</h1><h2 id="在系统类之中提供有三个常量"><a href="#在系统类之中提供有三个常量" class="headerlink" title="在系统类之中提供有三个常量"></a>在系统类之中提供有三个常量</h2><ul>
+<li>out –&gt;PrintStream 标准输出流</li>
+<li>in –&gt;InputStream标准输入流</li>
+<li>err –&gt;PrintStream标准错误输出流  </li>
+</ul>
+<p>System.out和System.err是同一种类型，如果使用的是eclipse，system.err会使用红色字体</p>
+<h1 id="二-BufferedReader缓冲输入流"><a href="#二-BufferedReader缓冲输入流" class="headerlink" title="二. BufferedReader缓冲输入流"></a>二. BufferedReader缓冲输入流</h1><h2 id="BufferedReader提供的是一个缓冲字符输入流的概念"><a href="#BufferedReader提供的是一个缓冲字符输入流的概念" class="headerlink" title="BufferedReader提供的是一个缓冲字符输入流的概念"></a>BufferedReader提供的是一个缓冲字符输入流的概念</h2><h1 id="三-Scanner扫描流"><a href="#三-Scanner扫描流" class="headerlink" title="三. Scanner扫描流"></a>三. Scanner扫描流</h1><h2 id="Scanner是从JDK1-5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类"><a href="#Scanner是从JDK1-5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类" class="headerlink" title="Scanner是从JDK1.5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类"></a>Scanner是从JDK1.5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类</h2><p>Scanner中有以下几个常用方法：</p>
+<ul>
+<li>public String next​() 读取数据，返回一个字符串</li>
+<li>public boolean hasNext​() 判断是否还有数据</li>
+<li>public int nextInt​(int radix) 将输入数据转换为Int</li>
+</ul>
+<p>Scanner整体设计优于BufferedReader<br>在今后开发中推荐使用Scanner<br>同时hasnext方法还可以进行正则匹配判断</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Listener-监听器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -610,267 +900,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Servlet实现验证码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/">Servlet实现验证码</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-制作网页"><a href="#一-制作网页" class="headerlink" title="一.制作网页"></a>一.制作网页</h1><h2 id="1-验证码包含俩部分：输入框和显示验证码的图片"><a href="#1-验证码包含俩部分：输入框和显示验证码的图片" class="headerlink" title="1.验证码包含俩部分：输入框和显示验证码的图片"></a>1.验证码包含俩部分：输入框和显示验证码的图片</h2><h2 id="2-那么验证码图片是如何获取的呢？"><a href="#2-那么验证码图片是如何获取的呢？" class="headerlink" title="2.那么验证码图片是如何获取的呢？"></a>2.那么验证码图片是如何获取的呢？</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Spring-boot-邮件发送实战记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">Spring boot 邮件发送实战记录</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:13:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第一部分-背景（前置知识）"><a href="#第一部分-背景（前置知识）" class="headerlink" title="第一部分 背景（前置知识）"></a>第一部分 背景（前置知识）</h1><h2 id="一-邮件发送原理："><a href="#一-邮件发送原理：" class="headerlink" title="一.邮件发送原理："></a>一.邮件发送原理：</h2><h3 id="1-邮件传输协议-SMTP协议和POP3协议"><a href="#1-邮件传输协议-SMTP协议和POP3协议" class="headerlink" title="1.邮件传输协议:SMTP协议和POP3协议"></a>1.邮件传输协议:SMTP协议和POP3协议</h3><h3 id="2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"><a href="#2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）" class="headerlink" title="2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"></a>2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）</h3><h2 id="二-邮件发送流程："><a href="#二-邮件发送流程：" class="headerlink" title="二.邮件发送流程："></a>二.邮件发送流程：</h2><p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk0EarqPloBkkxkCy3I6JOJrPNIHXyX3ap3jRcVOiTq6amkCz4.SFp9eTe3KMkQmnrG3vUq2hSEwAqf1bn0B4pdU!/c&ek=1&kp=1&pt=0&bo=gAKpAQAAAAADFxg!&tl=1&vuin=1084350607&tm=1576328400&sce=60-2-2&rf=viewer_4" alt="alt "> </p>
-<h2 id="三-Spring-Boot介绍"><a href="#三-Spring-Boot介绍" class="headerlink" title="三.Spring Boot介绍"></a>三.Spring Boot介绍</h2><h3 id="1-约定大于配置"><a href="#1-约定大于配置" class="headerlink" title="1.约定大于配置"></a>1.约定大于配置</h3><h3 id="2-简单快速开发"><a href="#2-简单快速开发" class="headerlink" title="2.简单快速开发"></a>2.简单快速开发</h3><h3 id="3-强大的生态链"><a href="#3-强大的生态链" class="headerlink" title="3.强大的生态链"></a>3.强大的生态链</h3><h3 id="4-Spring-boot和发送邮件："><a href="#4-Spring-boot和发送邮件：" class="headerlink" title="4.Spring boot和发送邮件："></a>4.Spring boot和发送邮件：</h3><pre><code>Spring boot发送邮件简化了操作的过程</code></pre><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VScode编辑Html文件实现实时预览" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/">VScode编辑Html文件实现实时预览</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/" class="archive-article-date">
-  	<time datetime="2019-12-13T13:01:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="总过程："><a href="#总过程：" class="headerlink" title="总过程："></a>总过程：</h1><h2 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h2><p>在VScode插件扩展包里搜索 Live service</p>
-<p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkx2PK2mVt74x1z3A7P.GIaqv.zQ86cAYq34*fWEeVDSnKgXbqNyJZzNFTi1lRWhjNaa9VrjAtqcZpx.2QqQyPZY!/b&bo=DgMqAgAAAAADBwc!&rf=viewer_4" alt="alt t"></p>
-<hr>
-<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>创建一个HTML文件后右键选择</p>
-<p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk9b1a6njBH35hydcFvEjaHQSa50X7WwBfANuRdaI4PqApOJ5IFQiVes29H7LaZjEyLxiClFhy9UZ8faL0RcwioI!/b&bo=gwLNAgAAAAADB2w!&rf=viewer_4" alt="alt"></p>
-<hr>
-<h2 id="接下来就可以实现实时预览啦"><a href="#接下来就可以实现实时预览啦" class="headerlink" title="接下来就可以实现实时预览啦"></a>接下来就可以实现实时预览啦</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Base64多次加密和解密不是初始消息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">Base64多次加密和解密后不是初始消息问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/" class="archive-article-date">
-  	<time datetime="2019-12-13T09:41:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Base64多次加密和解密后不是初始消息问题"><a href="#Base64多次加密和解密后不是初始消息问题" class="headerlink" title="Base64多次加密和解密后不是初始消息问题"></a>Base64多次加密和解密后不是初始消息问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Base64;</span><br><span class="line"></span><br><span class="line">class encod &#123;</span><br><span class="line">    private final static String SALT &#x3D; &quot;Tsy&quot;;　　　　&#x2F;&#x2F;添加盐值，增加解密难度</span><br><span class="line"></span><br><span class="line">    private final static int REPART &#x3D; 5;　　　　　　　&#x2F;&#x2F;设定加密次数，次数越多解密越难，但是会增加垃圾空间（原因是进行了字符串的修改）</span><br><span class="line"></span><br><span class="line">    public static String encode(String msg) &#123;</span><br><span class="line">        String tsy &#x3D; msg + &quot;&#123;&quot; + SALT + &quot;&#125;&quot;;</span><br><span class="line">        byte[] date &#x3D; tsy.getBytes();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; REPART; i++) &#123;</span><br><span class="line">            date &#x3D; Base64.getEncoder().encode(date);</span><br><span class="line">        &#125;</span><br><span class="line">        return new String(date);</span><br><span class="line">    &#125;</span><br><span class="line">    public static String decode(String msg) &#123;</span><br><span class="line">        byte[] date &#x3D; msg.getBytes();</span><br><span class="line">        for (int i &#x3D; 0; i &lt;REPART; i++) &#123;</span><br><span class="line">            date &#x3D; Base64.getDecoder().decode(date);</span><br><span class="line">        &#125;</span><br><span class="line">        return new String(date).replace(&quot;&#123;Tsy&#125;&quot;, &quot;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class T &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String msg1 &#x3D; &quot;Tsyscv&quot;;</span><br><span class="line">        System.out.println(msg1.hashCode());</span><br><span class="line">        String msg &#x3D; encod.encode(&quot;www.mldn.cn&quot;);</span><br><span class="line">        System.out.println(msg);</span><br><span class="line">        System.out.println(encod.decode(msg));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>以上是在加密中使用的java代码，但是却出现了解密后不是原消息的问题</p>
-<hr>
-<h2 id="原因如下："><a href="#原因如下：" class="headerlink" title="原因如下："></a>原因如下：</h2><p>使用Java.util中的Base64进行五次带盐值加密后，再进行解密，发现消息并不是我们原本发送的消息，原因是Base64.getDecoder().decode(byte[])和Base64.getDecoder().decode(Bytebuffer)俩个decode传入的参数不一样，只有使用decode传入byte流</p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">展开全文 >></a>
         </p>
       
 
