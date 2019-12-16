@@ -149,19 +149,165 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Java类集框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java中Comparable接口研究" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6/">Java类集框架</a>
+      <a class="article-title" href="/2019/12/16/Java%E4%B8%ADComparable%E6%8E%A5%E5%8F%A3%E7%A0%94%E7%A9%B6/">Java中Comparable接口研究</a>
     </h1>
   
 
         
-        <a href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6/" class="archive-article-date">
+        <a href="/2019/12/16/Java%E4%B8%ADComparable%E6%8E%A5%E5%8F%A3%E7%A0%94%E7%A9%B6/" class="archive-article-date">
+  	<time datetime="2019-12-16T04:56:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Comparable接口"><a href="#Comparable接口" class="headerlink" title="Comparable接口"></a>Comparable接口</h1><p>使用Comparable就扣自定义排序规则并自动排序，我们先写如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class Person1 implements Comparable&lt;Person1&gt;&#123;</span><br><span class="line">	public Person1() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	private String name ; </span><br><span class="line">	private int age;</span><br><span class="line">	public Person1(String name ,int age) &#123;</span><br><span class="line">		this.name &#x3D; name ;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public int compareTo(Person1 o) &#123;</span><br><span class="line">		if(this.age &gt; o.age) return 1;</span><br><span class="line">		if(this.age &lt; o.age) return -1;</span><br><span class="line">		else &#123;</span><br><span class="line">			return 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;姓名：&quot; + this.name + &quot;、年龄&quot; + this.age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class leiji &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Set&lt;Person1&gt; set &#x3D; new TreeSet&lt;Person1&gt;();</span><br><span class="line">		set.add(new Person1(&quot;同思远&quot;,18));</span><br><span class="line">		set.add(new Person1(&quot;同林艺&quot;,18));</span><br><span class="line">		set.add(new Person1(&quot;薛子扬&quot;,19));</span><br><span class="line">		set.add(new Person1(&quot;张三&quot;,22));</span><br><span class="line">		set.add(new Person1(&quot;李四&quot;,50));</span><br><span class="line">		set.forEach(System.out::println);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们发现此程序输出的结果如下  </p>
+<ul>
+<li>姓名：同思远、年龄18</li>
+<li>姓名：薛子扬、年龄19</li>
+<li>姓名：张三、年龄22</li>
+<li>姓名：李四、年龄50  <h2 id="我们发现同林艺的名字是丢失的，原因是什么呢，我们在覆写compareto方法的时候，只将年龄作为排序的唯一标准，所以在遇到相同年龄的时候，由于TreeSet中不允许有重复元素的出现，所以出现了数据丢失的现象"><a href="#我们发现同林艺的名字是丢失的，原因是什么呢，我们在覆写compareto方法的时候，只将年龄作为排序的唯一标准，所以在遇到相同年龄的时候，由于TreeSet中不允许有重复元素的出现，所以出现了数据丢失的现象" class="headerlink" title="我们发现同林艺的名字是丢失的，原因是什么呢，我们在覆写compareto方法的时候，只将年龄作为排序的唯一标准，所以在遇到相同年龄的时候，由于TreeSet中不允许有重复元素的出现，所以出现了数据丢失的现象"></a>我们发现同林艺的名字是丢失的，原因是什么呢，我们在覆写compareto方法的时候，只将年龄作为排序的唯一标准，所以在遇到相同年龄的时候，由于TreeSet中不允许有重复元素的出现，所以出现了数据丢失的现象</h2><h2 id="故我们对该代码做优化，我们将Compareto方法进行优化，将所有的属性添加进去"><a href="#故我们对该代码做优化，我们将Compareto方法进行优化，将所有的属性添加进去" class="headerlink" title="故我们对该代码做优化，我们将Compareto方法进行优化，将所有的属性添加进去"></a>故我们对该代码做优化，我们将Compareto方法进行优化，将所有的属性添加进去</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public int compareTo(Person1 o) &#123;</span><br><span class="line">	if(this.age &gt; o.age) return 1;</span><br><span class="line">	if(this.age &lt; o.age) return -1;</span><br><span class="line">	else &#123;</span><br><span class="line">		return this.name.compareTo(o.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+此时年龄不再是排序的唯一标准，输出结果正常</li>
+</ul>
+<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><pre><code>在进行自定义类排序的时候，一定要将该类中所有的属性都依次进行大小关系的匹配，否则某些属性相同的时候也会认为是重复数据。</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/16/Java%E4%B8%ADComparable%E6%8E%A5%E5%8F%A3%E7%A0%94%E7%A9%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java类集框架[Set集合]" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/16/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BSet%E9%9B%86%E5%90%88%5D/">Java类集框架[Set集合]</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/16/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BSet%E9%9B%86%E5%90%88%5D/" class="archive-article-date">
+  	<time datetime="2019-12-16T04:19:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-Set集合"><a href="#一-Set集合" class="headerlink" title="一. Set集合"></a>一. Set集合</h1><h2 id="Set是什么："><a href="#Set是什么：" class="headerlink" title="Set是什么："></a>Set是什么：</h2><pre><code>Set不允许有重复元素的出现的集合</code></pre><h2 id="Set和List最大区别："><a href="#Set和List最大区别：" class="headerlink" title="Set和List最大区别："></a>Set和List最大区别：</h2><pre><code>需要注意的是Set集合并不像List集合那样扩充了许多新方法，所以无法使用List集合中提供的get方法，也就是说set集合无法实现指定索引数据的获取</code></pre><h1 id="二-常用实现子类："><a href="#二-常用实现子类：" class="headerlink" title="二. 常用实现子类："></a>二. 常用实现子类：</h1><h2 id="Set："><a href="#Set：" class="headerlink" title="Set："></a>Set：</h2><ul>
+<li>HashSet</li>
+<li>TreeSet</li>
+</ul>
+<h1 id="三-子类介绍："><a href="#三-子类介绍：" class="headerlink" title="三. 子类介绍："></a>三. 子类介绍：</h1><h2 id="1-HashSet（最常用）"><a href="#1-HashSet（最常用）" class="headerlink" title="1.HashSet（最常用）"></a>1.HashSet（最常用）</h2><pre><code>HashSet是Set中使用最多的实现子类，其最大的特点就是保存的数据是无序的  
+HashSet继承了Set的无序特点，并且也不允许有重复元素的出现，需要注意的是，HashSet中允许有null元素的出现
+**************************************************************************************
+HashSet中判断元素重复是使用的Object类中的hashcode()和equals()方法共同实现的
+在eclipse中我们可以通过source-&gt;来创建hashCode()方法和equals()方法</code></pre><h2 id="2-TreeSet"><a href="#2-TreeSet" class="headerlink" title="2.TreeSet"></a>2.TreeSet</h2><pre><code>TreeSet与HashSet的最大区别是TreeSet是有序的
+Set接口是根据equals定义的，而TreeSet是根据compareTo（或compare）方法执行所有元素的比较，所以当TreeSet保存自定义类的时候，必须实现Comparable接口
+当利用TreeSet保存数据的时候，数据将自动按照升序的排序方式进行排列（Eg:字母从A到Z）</code></pre><p>注释：</p>
+<h3 id="由于TreeSet是通过compareTo方法确定大小关系的，所以在进行自定义类排序的时候，一定要将所有的属性都进行大小关系匹配，详情见博客”Java中Comparable接口研究”。"><a href="#由于TreeSet是通过compareTo方法确定大小关系的，所以在进行自定义类排序的时候，一定要将所有的属性都进行大小关系匹配，详情见博客”Java中Comparable接口研究”。" class="headerlink" title="由于TreeSet是通过compareTo方法确定大小关系的，所以在进行自定义类排序的时候，一定要将所有的属性都进行大小关系匹配，详情见博客”Java中Comparable接口研究”。"></a>由于TreeSet是通过compareTo方法确定大小关系的，所以在进行自定义类排序的时候，一定要将所有的属性都进行大小关系匹配，详情见博客”Java中Comparable接口研究”。</h3><h3 id="将所有的属性进行大小匹配，这样难度会非常大，所以在开发中我们首选HashSet进行数据的存储"><a href="#将所有的属性进行大小匹配，这样难度会非常大，所以在开发中我们首选HashSet进行数据的存储" class="headerlink" title="将所有的属性进行大小匹配，这样难度会非常大，所以在开发中我们首选HashSet进行数据的存储"></a>将所有的属性进行大小匹配，这样难度会非常大，所以在开发中我们首选HashSet进行数据的存储</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/16/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BSet%E9%9B%86%E5%90%88%5D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java类集框架[List集合]" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BList%E9%9B%86%E5%90%88%5D/">Java类集框架&lt;List&gt;</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BList%E9%9B%86%E5%90%88%5D/" class="archive-article-date">
   	<time datetime="2019-12-15T09:43:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
 </a>
         
@@ -182,7 +328,14 @@
 </ul>
 <p>Array继承关系如下：<br><img src="http://q2jp0zc7u.bkt.clouddn.com/sce.png" alt="alt"></p>
 <h2 id="List中也提供了of-的静态方法可以直接使用，操作如下"><a href="#List中也提供了of-的静态方法可以直接使用，操作如下" class="headerlink" title="List中也提供了of 的静态方法可以直接使用，操作如下"></a>List中也提供了of 的静态方法可以直接使用，操作如下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class leiji &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		ArrayList&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">		list.add(&quot;你好&quot;);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		</span><br><span class="line">		List&lt;String&gt; list2 &#x3D; List.of(&quot;hello&quot;,&quot;world&quot;);</span><br><span class="line">		System.out.println(list2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注释:ArrayList初始长度为10，当长度不够时，ArrayList的长度将翻倍增长:10-&gt;20-&gt;40-&gt;80</span><br></pre></td></tr></table></figure>
+<p>三. ArrayList保存自定义类<br>    ArrayList保存自定义类的时候，一定要确保该类中覆写了equals方法，否则不能进行删除等操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">	public Person() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	private String name ; </span><br><span class="line">	private int age;</span><br><span class="line">	public Person(String name ,int age) &#123;</span><br><span class="line">		this.name &#x3D; name ;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public boolean equals(Object obj) &#123;</span><br><span class="line">		if(this &#x3D;&#x3D; obj) return true;</span><br><span class="line">		if(obj &#x3D;&#x3D; null) return false;</span><br><span class="line">		if(!(obj instanceof person)) return false;</span><br><span class="line">		else &#123;</span><br><span class="line">			Person per &#x3D; (Person)obj;</span><br><span class="line">			return this.name.equals(per.name) &amp;&amp; this.age &#x3D;&#x3D; per.age;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h1 id="四-LinkedList链表实现："><a href="#四-LinkedList链表实现：" class="headerlink" title="四. LinkedList链表实现："></a>四. LinkedList链表实现：</h1><h2 id="LinkedList链表实现，在操作上与ArrayList没用任何区别，但是LinkedList优点在于不用事先对数据的存储数量有明确要求，故LinkedList只存在无参构造方法。"><a href="#LinkedList链表实现，在操作上与ArrayList没用任何区别，但是LinkedList优点在于不用事先对数据的存储数量有明确要求，故LinkedList只存在无参构造方法。" class="headerlink" title="LinkedList链表实现，在操作上与ArrayList没用任何区别，但是LinkedList优点在于不用事先对数据的存储数量有明确要求，故LinkedList只存在无参构造方法。"></a>LinkedList链表实现，在操作上与ArrayList没用任何区别，但是LinkedList优点在于不用事先对数据的存储数量有明确要求，故LinkedList只存在无参构造方法。</h2><h2 id="LinkedList链表主要是为了解决顺序表以下的一系列缺点所产生的更优数据结构。"><a href="#LinkedList链表主要是为了解决顺序表以下的一系列缺点所产生的更优数据结构。" class="headerlink" title="LinkedList链表主要是为了解决顺序表以下的一系列缺点所产生的更优数据结构。"></a>LinkedList链表主要是为了解决顺序表以下的一系列缺点所产生的更优数据结构。</h2><ul>
+<li>表的容量难以扩充</li>
+<li>需要预先分配空间</li>
+<li>插入删除移动次数很多，性能低</li>
+</ul>
 
       
 
@@ -195,7 +348,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BList%E9%9B%86%E5%90%88%5D/">展开全文 >></a>
         </p>
       
 
@@ -735,171 +888,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Filte（过滤器学习记录）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/">Filte（过滤器学习记录）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2019-12-14T13:25:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-Filter是什么"><a href="#一-Filter是什么" class="headerlink" title="一.Filter是什么"></a>一.Filter是什么</h1><p>  Filter叫做拦截器，用于拦截预处理的request.Filter不是一个servlet，它不能产生一个response，他能在request到达servlet之前预处理request，也可以在response离开servlet<br>  时处理response<br>  filter是一个类，在写filter时我们需要继承java.servlet.Filter接口来实现一个filter  </p>
-<p>  例如：  </p>
-<p>  <img src="http://chuantu.xyz/t6/704/1576343438x2073530529.png" alt="alt"></p>
-<p>我们可以看到Filter接口中提供了三个方法</p>
-<ul>
-<li>init() 初始化</li>
-<li>doFilter() 进行拦截</li>
-<li>destroy()  自毁</li>
-</ul>
-<h1 id="二-Filte四种拦截方式："><a href="#二-Filte四种拦截方式：" class="headerlink" title="二.Filte四种拦截方式："></a>二.Filte四种拦截方式：</h1><p>如果需要设置Filte拦截方式，我们需要在web项目中的XML文件中进行配置（同Servlet）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;tsy.filter.java&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 设置需要拦截的Servlet --&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;AServlet&lt;&#x2F;url-pattern&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 还可以指定Servlet进行过滤 --&gt;</span><br><span class="line">	&lt;servlet-name&gt;AServlet&lt;&#x2F;servlet-name&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- 默认问REQUEST拦截方式 --&gt;		</span><br><span class="line">	&lt;dispatcher&gt;REQUEST&lt;&#x2F;dispatcher&gt;</span><br><span class="line">	&lt;dispatcher&gt;FORWARD&lt;&#x2F;dispatcher&gt;</span><br><span class="line">	&lt;dispatcher&gt;INCLUDE&lt;&#x2F;dispatcher&gt;</span><br><span class="line">	&lt;dispatcher&gt;ERROR&lt;&#x2F;dispatcher&gt;	</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>request（默认） </li>
-<li>forward（拦截转发）</li>
-<li>include（拦截包含）</li>
-<li>error（拦截错误页面）</li>
-</ul>
-<h1 id="三-使用Filter-mapping控制多个Filter的执行顺序"><a href="#三-使用Filter-mapping控制多个Filter的执行顺序" class="headerlink" title="三.使用Filter-mapping控制多个Filter的执行顺序"></a>三.使用Filter-mapping控制多个Filter的执行顺序</h1><p><code>&lt;filter-mappin&gt;</code>中的配置顺序决定了过滤器的执行顺序！<br>接下来进行演示，我创建了一个名为FilterStudy的动态web项目，在src下写入俩个filter来进行演示执行顺序，分别叫做AFilter和BFilter  </p>
-<p>在创建时我将路径改为/*  </p>
-<p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk6xxg0gTsYcJH9NfIRTDQNj5P541*PPM84ScQjtlWt47sfwLRQeWiDBwpBjYae7MALKwR0hk6kTFR55LD9C0Gs0!/b&bo=*gEEAgAAAAADF8s!&rf=viewer_4" alt="alt"></p>
-<p>接下来我们得到了俩个Filter,AFilter输出AFilter,BFilter同理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class AFilter implements Filter &#123;</span><br><span class="line"></span><br><span class="line">	public void destroy() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException &#123;	</span><br><span class="line">		System.out.println(&quot;AFilter&quot;);</span><br><span class="line">		chain.doFilter(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">	public void init(FilterConfig fConfig) throws ServletException &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>紧接着我们在XML文件中配置Filter如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;tsy.x.AFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;Text.html&lt;&#x2F;url-pattern&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;BFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;tsy.x.BFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;BFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;Text.html&lt;&#x2F;url-pattern&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-<p>可以看出我们先配置了AFilter，然后再配置了BFilter  </p>
-<p>在我访问Text.html后看到控制台输出如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AFilter</span><br><span class="line">BFilter</span><br><span class="line">AFilter</span><br><span class="line">BFilter</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="总结：Filter的执行顺序由-lt-filter-mapping-gt-中配置filter的顺序决定"><a href="#总结：Filter的执行顺序由-lt-filter-mapping-gt-中配置filter的顺序决定" class="headerlink" title="总结：Filter的执行顺序由&lt;filter-mapping&gt;中配置filter的顺序决定"></a>总结：Filter的执行顺序由<code>&lt;filter-mapping&gt;</code>中配置filter的顺序决定</h2><h1 id="四-过滤器的应用场景："><a href="#四-过滤器的应用场景：" class="headerlink" title="四.过滤器的应用场景："></a>四.过滤器的应用场景：</h1><ul>
-<li>执行目标资源之前做预处理工作，例如Servlet设置编码，可以把设置编码的工作放在Filter中</li>
-<li>通过条件判断是否放行，例如检验当前用户是否已经登录，或者用户IP是否被禁用</li>
-<li>在目标资源执行后，做后续的特殊处理工作</li>
-</ul>
-<h1 id="五-过滤器调用资源方式："><a href="#五-过滤器调用资源方式：" class="headerlink" title="五.过滤器调用资源方式："></a>五.过滤器调用资源方式：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   &lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 设置需要拦截的Servlet --&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;AServlet&lt;&#x2F;url-pattern&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 还可以指定Servlet进行过滤 --&gt;</span><br><span class="line">	&lt;servlet-name&gt;AServlet&lt;&#x2F;servlet-name&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="六-Filter中的相关方法和相关类"><a href="#六-Filter中的相关方法和相关类" class="headerlink" title="六.Filter中的相关方法和相关类:"></a>六.Filter中的相关方法和相关类:</h1><p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk2cJJKyMgWX9p*jCxUFfKFE51itHyuZcmbNcG6AF6FjuEpZNvokgkHGgMzC0I6KfWGS5LQYISsL1dS.YD*SP.wc!/b&bo=gAIEAQAAAAADJ4U!&rf=viewer_4" alt="alt"></p>
-<h1 id="实践案例请查看博客“Filter分IP统计访问次数”"><a href="#实践案例请查看博客“Filter分IP统计访问次数”" class="headerlink" title="实践案例请查看博客“Filter分IP统计访问次数”"></a>实践案例请查看博客“Filter分IP统计访问次数”</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-自我反思" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/">自我反思</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/" class="archive-article-date">
-  	<time datetime="2019-12-14T13:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="今天在慕课网上看到一个课程如下"><a href="#今天在慕课网上看到一个课程如下" class="headerlink" title="今天在慕课网上看到一个课程如下"></a>今天在慕课网上看到一个课程如下</h2><p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk.vftSoXkIL4J8MfzwGkIsi*91*3Z.oYCPck2aYbwCRddPMLBqx.vGpgmKVz.HvUtPTU5h2xHtOH0e2EqLX33Sw!/c&ek=1&kp=1&pt=0&bo=7QDzAAAAAAADFyw!&tl=1&vuin=1084350607&tm=1576328400&sce=60-2-2&rf=viewer_4" alt="alt"></p>
-<h2 id="看完之后感触很深，最近一段时间不知道自己在干些什么，总是很着急的想要扩展自己的技术广度，不能沉下心来好好钻研一门技术，深感愧疚，写此博客以记录"><a href="#看完之后感触很深，最近一段时间不知道自己在干些什么，总是很着急的想要扩展自己的技术广度，不能沉下心来好好钻研一门技术，深感愧疚，写此博客以记录" class="headerlink" title="看完之后感触很深，最近一段时间不知道自己在干些什么，总是很着急的想要扩展自己的技术广度，不能沉下心来好好钻研一门技术，深感愧疚，写此博客以记录"></a>看完之后感触很深，最近一段时间不知道自己在干些什么，总是很着急的想要扩展自己的技术广度，不能沉下心来好好钻研一门技术，深感愧疚，写此博客以记录</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/">展开全文 >></a>
         </p>
       
 
