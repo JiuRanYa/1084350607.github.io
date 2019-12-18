@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>欢迎来到同思远的博客</title>
+  <title>【Java篇】Stream数据流 | 欢迎来到同思远的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到同思远的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="一. Stream数据流简介从JDK1.8开始，由于已经进入了大数据时代，所以在类集里面也支持有数据的流式分析处理操作，，所以java提供了Stream的接口，同时在Collection接口里面也提供有为此接口实例化的方法  default Stream parallelStream​()：返回可能并行（多个CPU同时分析）的Stream数据流 default Stream stream​()：返">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Java篇】Stream数据流">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;16&#x2F;%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到同思远的博客">
-<meta property="og:description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
+<meta property="og:description" content="一. Stream数据流简介从JDK1.8开始，由于已经进入了大数据时代，所以在类集里面也支持有数据的流式分析处理操作，，所以java提供了Stream的接口，同时在Collection接口里面也提供有为此接口实例化的方法  default Stream parallelStream​()：返回可能并行（多个CPU同时分析）的Stream数据流 default Stream stream​()：返">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-16T11:53:53.000Z">
+<meta property="article:modified_time" content="2019-12-16T13:16:24.845Z">
 <meta property="article:author" content="Tsy">
 <meta property="article:tag" content="学习，开源，技术，分享">
 <meta name="twitter:card" content="summary">
@@ -147,103 +149,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Listener-监听器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-【Java篇】Stream数据流" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/">【JavaWeb篇】监听器&lt;Listener&gt;</a>
+    <h1 class="article-title" itemprop="name">
+      【Java篇】Stream数据流
     </h1>
   
 
         
-        <a href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2019-12-14T15:15:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
+        <a href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/" class="archive-article-date">
+  	<time datetime="2019-12-16T11:53:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一-什么叫做Listener（监听器）"><a href="#一-什么叫做Listener（监听器）" class="headerlink" title="一. 什么叫做Listener（监听器）"></a>一. 什么叫做Listener（监听器）</h1><h2 id="Javaweb三大组件："><a href="#Javaweb三大组件：" class="headerlink" title="Javaweb三大组件："></a>Javaweb三大组件：</h2><ul>
-<li>Servlet</li>
-<li>Listener</li>
-<li>Filter</li>
-</ul>
-<h2 id="监听器："><a href="#监听器：" class="headerlink" title="监听器："></a>监听器：</h2><ul>
-<li>他是一个接口，内容由设计者实现</li>
-<li>他需要注册，例如注册在按钮上</li>
-<li>监听器中的方法，会在特殊事件发生时被调用</li>
-</ul>
-<h2 id="观察者："><a href="#观察者：" class="headerlink" title="观察者："></a>观察者：</h2><ul>
-<li>事件源<ul>
-<li>小偷 </li>
-</ul>
-</li>
-<li>事件<ul>
-<li>偷东西</li>
-</ul>
-</li>
-<li>监听器<ul>
-<li>警察</li>
-<li>监听器的方法：抓捕</li>
-</ul>
-</li>
-</ul>
-<p>&emsp;监听器注册在事件源上，等待事件的发生后执行监听器功能</p>
-<h1 id="二-监听器概述以及生命周期监听器"><a href="#二-监听器概述以及生命周期监听器" class="headerlink" title="二.监听器概述以及生命周期监听器"></a>二.监听器概述以及生命周期监听器</h1><h2 id="—————————-Javaweb中的监听器————————–"><a href="#—————————-Javaweb中的监听器————————–" class="headerlink" title="—————————-Javaweb中的监听器————————–"></a>—————————-Javaweb中的监听器————————–</h2><h2 id="1-事件源：三大域-（域对象的作用：保存数据，获取数据，共享数据）："><a href="#1-事件源：三大域-（域对象的作用：保存数据，获取数据，共享数据）：" class="headerlink" title="1.事件源：三大域  （域对象的作用：保存数据，获取数据，共享数据）："></a>1.事件源：三大域  （域对象的作用：保存数据，获取数据，共享数据）：</h2><ul>
-<li><p>ServletContext（上下文）</p>
+        <h1 id="一-Stream数据流简介"><a href="#一-Stream数据流简介" class="headerlink" title="一. Stream数据流简介"></a>一. Stream数据流简介</h1><p>从JDK1.8开始，由于已经进入了大数据时代，所以在类集里面也支持有数据的流式分析处理操作，，所以java提供了Stream的接口，同时在Collection接口里面也提供有为此接口实例化的方法</p>
 <ul>
-<li>生死监听：ServletContextListener<ul>
-<li>ServletContext出生调用：void contextInitialized(ServletContextEvent sce)  </li>
-<li>ServletContext死亡调用：void contextDestroyed(ServletContextEvent sce)</li>
+<li>default Stream<E> parallelStream​()：返回可能并行（多个CPU同时分析）的Stream数据流</li>
+<li>default Stream<E> stream​()：返回一个序列Stream  <h2 id="Stream基本操作："><a href="#Stream基本操作：" class="headerlink" title="Stream基本操作："></a>Stream基本操作：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">	List&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">	Collections.addAll(list,&quot;java&quot;, &quot;python&quot;,&quot;go&quot;);</span><br><span class="line">	Stream&lt;String&gt; stream &#x3D; list.stream();</span><br><span class="line">	System.out.println(stream.count());</span><br><span class="line">       &#x2F;*实现查询数据中包含J的数据*&#x2F;</span><br><span class="line">       System.out.println(stream.filter((ele)-&gt;ele.toUpperCase().contains(&quot;J&quot;)).count());</span><br><span class="line"></span><br><span class="line">       &#x2F;*查找存在J字母的数据*&#x2F;</span><br><span class="line">       List&lt;String&gt; result &#x3D; stream.filter((ele)-&gt;ele.toUpperCase().contains(&quot;J&quot;)).collect(Collectors.toList());</span><br><span class="line">	System.out.println(result);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-<li>属性监听：ServletContextAttributeListenr<ul>
-<li>ServletContext设置属性调用：attributeAdded(ServletContextAttributeEvent scab)</li>
-<li>ServletContext替换属性调用：attributeRemoved(ServletContextAttributeEvent scab) </li>
-<li>ServletContext移除属性调用：attributeReplaced(ServletContextAttributeEvent scab) </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>HttpSession：request.getSession()方法调用后网站才会生成Session</p>
-<ul>
-<li>生死监听：HttpSessionListener<ul>
-<li>他有俩个方法，一个出生调用，一个死亡调用</li>
-</ul>
-</li>
-<li>属性监听：HttpSessionAttributeListenr<ul>
-<li>他有三个方法set，一个在设置属性调用，一个在替换属性调用，一个在移除属性调用</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>ServletRequest</p>
-<ul>
-<li>生死监听：ServletRequestListener<ul>
-<li>他有俩个方法，一个出生调用，一个死亡调用</li>
-</ul>
-</li>
-<li>属性监听：ServletRequestAttributeListenr<ul>
-<li>他有三个方法set，一个在设置属性调用，一个在替换属性调用，一个在移除属性调用  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext-方法；"><a href="#2-三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext-方法；" class="headerlink" title="2.三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext()方法；"></a>2.三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext()方法；</h2><h1 id="三-JavaWeb中完成编写监听器："><a href="#三-JavaWeb中完成编写监听器：" class="headerlink" title="三.JavaWeb中完成编写监听器："></a>三.JavaWeb中完成编写监听器：</h1><h2 id="1-写一个监听器类-要求必须去实现某个监听器接口"><a href="#1-写一个监听器类-要求必须去实现某个监听器接口" class="headerlink" title="1.写一个监听器类:要求必须去实现某个监听器接口"></a>1.写一个监听器类:要求必须去实现某个监听器接口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">            实现ServletContextListener生死监听  </span><br><span class="line">    ！可以在这个监听器存放一些Tomcat启动时就要完成的代码！</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line">public class AListener implements ServletContextListener &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void contextDestroyed(ServletContextEvent arg0) &#123;</span><br><span class="line">		System.out.println(&quot;死之前&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void contextInitialized(ServletContextEvent arg0) &#123;</span><br><span class="line">		System.out.println(&quot;出生后&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="在XML文件中配置如下：-只需要指定类名"><a href="#在XML文件中配置如下：-只需要指定类名" class="headerlink" title="在XML文件中配置如下：(只需要指定类名)"></a>在XML文件中配置如下：(只需要指定类名)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;listener&gt;</span><br><span class="line">	&lt;listener-class&gt;tsy.c.AListener&lt;&#x2F;listener-class&gt;</span><br><span class="line">&lt;&#x2F;listener&gt;</span><br></pre></td></tr></table></figure>
-
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk61vBw7Y7P3n59Y8ThjyVVgtNOpBg6PYBfsHcivwMUiCxpMccLtLgPRDrFAJZxHdXJ7KHzPzZIxClspESFjP8m4!/b&amp;bo=gwG8AQAAAAADFw0!&amp;rf=viewer_4">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkwuX7imdm5Pyj.x3.6l53dRBgdPKQq.Oh1QVI5J4iKmmr5gwR9Gq8vUHwlZPLsr23GJ9ZeIC5xQKhG.EqxvZs*I!/b&amp;bo=ZwFiAQAAAAADByc!&amp;rf=viewer_4">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -252,16 +216,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【Java篇】网络编程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/16/Java%E4%B8%ADComparable%E6%8E%A5%E5%8F%A3%E7%A0%94%E7%A9%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【Java篇】Java中Comparable接口研究&lt;Comparable&gt;</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -276,634 +308,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Filter分IP统计w访问次数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/">【JavaWeb篇】Filter分IP统计访问次数</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2019-12-14T15:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>统计工作需要在所有资源之前都执行，<br>所以我们可以放在Filter中此过滤器不进行拦截工作，只进行统计<br>用Map来装载统计数据，Map在Filter中用来保存数据  </p>
-<p>Map在服务器启动的时候创建，这时候我们会想到在Filter中的init方法中进行创建Map<br>但是此时就有一个问题出现了，如果以后我们的浏览器有多个Filter，为什么要放在这个Filter中呢</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-Stream数据流简介"><span class="toc-number">1.</span> <span class="toc-text">一. Stream数据流简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Stream基本操作："><span class="toc-number">1.1.</span> <span class="toc-text">Stream基本操作：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-Chrome浏览器打开是毒霸浏览器解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">【问题篇】Chrome浏览器打开是毒霸浏览器解决方案</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2019-12-14T14:34:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-如果电脑下载了驱动精灵："><a href="#1-如果电脑下载了驱动精灵：" class="headerlink" title="1.如果电脑下载了驱动精灵："></a>1.如果电脑下载了驱动精灵：</h1><h2 id="打开驱动精灵"><a href="#打开驱动精灵" class="headerlink" title="打开驱动精灵"></a>打开驱动精灵</h2><h2 id="点击百宝箱功能"><a href="#点击百宝箱功能" class="headerlink" title="点击百宝箱功能"></a>点击百宝箱功能</h2><h2 id="取消设定毒霸为默认浏览器"><a href="#取消设定毒霸为默认浏览器" class="headerlink" title="取消设定毒霸为默认浏览器"></a>取消设定毒霸为默认浏览器</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-tomcat无法启动，端口被占用解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">【问题篇】tomcat无法启动，端口被占用解决方案</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2019-12-14T14:22:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在我启动tomcat的时候，出现以下报错</p>
-<p><img src="http://chuantu.xyz/t6/704/1576343379x2073530527.png" alt="alt"></p>
-<p>原因是tomcat的8080端口被占用</p>
-<h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><h2 id="1-在cmd中输入netstat-ano"><a href="#1-在cmd中输入netstat-ano" class="headerlink" title="1.在cmd中输入netstat -ano"></a>1.在cmd中输入netstat -ano</h2><h2 id="2-在端口列表中找到8080端口对应的PID"><a href="#2-在端口列表中找到8080端口对应的PID" class="headerlink" title="2.在端口列表中找到8080端口对应的PID"></a>2.在端口列表中找到8080端口对应的PID</h2><h2 id="3-在任务管理器服务页面关闭PID对应进程"><a href="#3-在任务管理器服务页面关闭PID对应进程" class="headerlink" title="3.在任务管理器服务页面关闭PID对应进程"></a>3.在任务管理器服务页面关闭PID对应进程</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Filte（过滤器学习记录）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/">【JavaWeb篇】过滤器&lt;Filter&gt;</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2019-12-14T13:25:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-Filter是什么"><a href="#一-Filter是什么" class="headerlink" title="一.Filter是什么"></a>一.Filter是什么</h1><p>  Filter叫做拦截器，用于拦截预处理的request.Filter不是一个servlet，它不能产生一个response，他能在request到达servlet之前预处理request，也可以在response离开servlet<br>  时处理response<br>  filter是一个类，在写filter时我们需要继承java.servlet.Filter接口来实现一个filter  </p>
-<p>  例如：  </p>
-<p>  <img src="http://chuantu.xyz/t6/704/1576343438x2073530529.png" alt="alt"></p>
-<p>我们可以看到Filter接口中提供了三个方法</p>
-<ul>
-<li>init() 初始化</li>
-<li>doFilter() 进行拦截</li>
-<li>destroy()  自毁</li>
-</ul>
-<h1 id="二-Filte四种拦截方式："><a href="#二-Filte四种拦截方式：" class="headerlink" title="二.Filte四种拦截方式："></a>二.Filte四种拦截方式：</h1><p>如果需要设置Filte拦截方式，我们需要在web项目中的XML文件中进行配置（同Servlet）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;tsy.filter.java&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 设置需要拦截的Servlet --&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;AServlet&lt;&#x2F;url-pattern&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 还可以指定Servlet进行过滤 --&gt;</span><br><span class="line">	&lt;servlet-name&gt;AServlet&lt;&#x2F;servlet-name&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!-- 默认问REQUEST拦截方式 --&gt;		</span><br><span class="line">	&lt;dispatcher&gt;REQUEST&lt;&#x2F;dispatcher&gt;</span><br><span class="line">	&lt;dispatcher&gt;FORWARD&lt;&#x2F;dispatcher&gt;</span><br><span class="line">	&lt;dispatcher&gt;INCLUDE&lt;&#x2F;dispatcher&gt;</span><br><span class="line">	&lt;dispatcher&gt;ERROR&lt;&#x2F;dispatcher&gt;	</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>request（默认） </li>
-<li>forward（拦截转发）</li>
-<li>include（拦截包含）</li>
-<li>error（拦截错误页面）</li>
-</ul>
-<h1 id="三-使用Filter-mapping控制多个Filter的执行顺序"><a href="#三-使用Filter-mapping控制多个Filter的执行顺序" class="headerlink" title="三.使用Filter-mapping控制多个Filter的执行顺序"></a>三.使用Filter-mapping控制多个Filter的执行顺序</h1><p><code>&lt;filter-mappin&gt;</code>中的配置顺序决定了过滤器的执行顺序！<br>接下来进行演示，我创建了一个名为FilterStudy的动态web项目，在src下写入俩个filter来进行演示执行顺序，分别叫做AFilter和BFilter  </p>
-<p>在创建时我将路径改为/*  </p>
-<p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk6xxg0gTsYcJH9NfIRTDQNj5P541*PPM84ScQjtlWt47sfwLRQeWiDBwpBjYae7MALKwR0hk6kTFR55LD9C0Gs0!/b&bo=*gEEAgAAAAADF8s!&rf=viewer_4" alt="alt"></p>
-<p>接下来我们得到了俩个Filter,AFilter输出AFilter,BFilter同理</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class AFilter implements Filter &#123;</span><br><span class="line"></span><br><span class="line">	public void destroy() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException &#123;	</span><br><span class="line">		System.out.println(&quot;AFilter&quot;);</span><br><span class="line">		chain.doFilter(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">	public void init(FilterConfig fConfig) throws ServletException &#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>紧接着我们在XML文件中配置Filter如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;tsy.x.AFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;Text.html&lt;&#x2F;url-pattern&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;BFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;tsy.x.BFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;BFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;Text.html&lt;&#x2F;url-pattern&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-<p>可以看出我们先配置了AFilter，然后再配置了BFilter  </p>
-<p>在我访问Text.html后看到控制台输出如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AFilter</span><br><span class="line">BFilter</span><br><span class="line">AFilter</span><br><span class="line">BFilter</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="总结：Filter的执行顺序由-lt-filter-mapping-gt-中配置filter的顺序决定"><a href="#总结：Filter的执行顺序由-lt-filter-mapping-gt-中配置filter的顺序决定" class="headerlink" title="总结：Filter的执行顺序由&lt;filter-mapping&gt;中配置filter的顺序决定"></a>总结：Filter的执行顺序由<code>&lt;filter-mapping&gt;</code>中配置filter的顺序决定</h2><h1 id="四-过滤器的应用场景："><a href="#四-过滤器的应用场景：" class="headerlink" title="四.过滤器的应用场景："></a>四.过滤器的应用场景：</h1><ul>
-<li>执行目标资源之前做预处理工作，例如Servlet设置编码，可以把设置编码的工作放在Filter中</li>
-<li>通过条件判断是否放行，例如检验当前用户是否已经登录，或者用户IP是否被禁用</li>
-<li>在目标资源执行后，做后续的特殊处理工作</li>
-</ul>
-<h1 id="五-过滤器调用资源方式："><a href="#五-过滤器调用资源方式：" class="headerlink" title="五.过滤器调用资源方式："></a>五.过滤器调用资源方式：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   &lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;AFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 设置需要拦截的Servlet --&gt;</span><br><span class="line">	&lt;url-pattern&gt;&#x2F;AServlet&lt;&#x2F;url-pattern&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;!-- 还可以指定Servlet进行过滤 --&gt;</span><br><span class="line">	&lt;servlet-name&gt;AServlet&lt;&#x2F;servlet-name&gt;</span><br><span class="line">&lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="六-Filter中的相关方法和相关类"><a href="#六-Filter中的相关方法和相关类" class="headerlink" title="六.Filter中的相关方法和相关类:"></a>六.Filter中的相关方法和相关类:</h1><p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk2cJJKyMgWX9p*jCxUFfKFE51itHyuZcmbNcG6AF6FjuEpZNvokgkHGgMzC0I6KfWGS5LQYISsL1dS.YD*SP.wc!/b&bo=gAIEAQAAAAADJ4U!&rf=viewer_4" alt="alt"></p>
-<h1 id="实践案例请查看博客“Filter分IP统计访问次数”"><a href="#实践案例请查看博客“Filter分IP统计访问次数”" class="headerlink" title="实践案例请查看博客“Filter分IP统计访问次数”"></a>实践案例请查看博客“Filter分IP统计访问次数”</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Filte%EF%BC%88%E8%BF%87%E6%BB%A4%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-自我反思" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/">自我反思</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/" class="archive-article-date">
-  	<time datetime="2019-12-14T13:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="今天在慕课网上看到一个课程如下"><a href="#今天在慕课网上看到一个课程如下" class="headerlink" title="今天在慕课网上看到一个课程如下"></a>今天在慕课网上看到一个课程如下</h2><p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk.vftSoXkIL4J8MfzwGkIsi*91*3Z.oYCPck2aYbwCRddPMLBqx.vGpgmKVz.HvUtPTU5h2xHtOH0e2EqLX33Sw!/c&ek=1&kp=1&pt=0&bo=7QDzAAAAAAADFyw!&tl=1&vuin=1084350607&tm=1576328400&sce=60-2-2&rf=viewer_4" alt="alt"></p>
-<h2 id="看完之后感触很深，最近一段时间不知道自己在干些什么，总是很着急的想要扩展自己的技术广度，不能沉下心来好好钻研一门技术，深感愧疚，写此博客以记录"><a href="#看完之后感触很深，最近一段时间不知道自己在干些什么，总是很着急的想要扩展自己的技术广度，不能沉下心来好好钻研一门技术，深感愧疚，写此博客以记录" class="headerlink" title="看完之后感触很深，最近一段时间不知道自己在干些什么，总是很着急的想要扩展自己的技术广度，不能沉下心来好好钻研一门技术，深感愧疚，写此博客以记录"></a>看完之后感触很深，最近一段时间不知道自己在干些什么，总是很着急的想要扩展自己的技术广度，不能沉下心来好好钻研一门技术，深感愧疚，写此博客以记录</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Servlet实现验证码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/">【JavaWeb篇】Servlet实现验证码</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-制作网页"><a href="#一-制作网页" class="headerlink" title="一.制作网页"></a>一.制作网页</h1><h2 id="1-验证码包含俩部分：输入框和显示验证码的图片"><a href="#1-验证码包含俩部分：输入框和显示验证码的图片" class="headerlink" title="1.验证码包含俩部分：输入框和显示验证码的图片"></a>1.验证码包含俩部分：输入框和显示验证码的图片</h2><h2 id="2-那么验证码图片是如何获取的呢？"><a href="#2-那么验证码图片是如何获取的呢？" class="headerlink" title="2.那么验证码图片是如何获取的呢？"></a>2.那么验证码图片是如何获取的呢？</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Spring-boot-邮件发送实战记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">【框架篇】Spring boot 邮件发送实战记录</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:13:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第一部分-背景（前置知识）"><a href="#第一部分-背景（前置知识）" class="headerlink" title="第一部分 背景（前置知识）"></a>第一部分 背景（前置知识）</h1><h2 id="一-邮件发送原理："><a href="#一-邮件发送原理：" class="headerlink" title="一.邮件发送原理："></a>一.邮件发送原理：</h2><h3 id="1-邮件传输协议-SMTP协议和POP3协议"><a href="#1-邮件传输协议-SMTP协议和POP3协议" class="headerlink" title="1.邮件传输协议:SMTP协议和POP3协议"></a>1.邮件传输协议:SMTP协议和POP3协议</h3><h3 id="2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"><a href="#2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）" class="headerlink" title="2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"></a>2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）</h3><h2 id="二-邮件发送流程："><a href="#二-邮件发送流程：" class="headerlink" title="二.邮件发送流程："></a>二.邮件发送流程：</h2><p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk0EarqPloBkkxkCy3I6JOJrPNIHXyX3ap3jRcVOiTq6amkCz4.SFp9eTe3KMkQmnrG3vUq2hSEwAqf1bn0B4pdU!/c&ek=1&kp=1&pt=0&bo=gAKpAQAAAAADFxg!&tl=1&vuin=1084350607&tm=1576328400&sce=60-2-2&rf=viewer_4" alt="alt "> </p>
-<h2 id="三-Spring-Boot介绍"><a href="#三-Spring-Boot介绍" class="headerlink" title="三.Spring Boot介绍"></a>三.Spring Boot介绍</h2><h3 id="1-约定大于配置"><a href="#1-约定大于配置" class="headerlink" title="1.约定大于配置"></a>1.约定大于配置</h3><h3 id="2-简单快速开发"><a href="#2-简单快速开发" class="headerlink" title="2.简单快速开发"></a>2.简单快速开发</h3><h3 id="3-强大的生态链"><a href="#3-强大的生态链" class="headerlink" title="3.强大的生态链"></a>3.强大的生态链</h3><h3 id="4-Spring-boot和发送邮件："><a href="#4-Spring-boot和发送邮件：" class="headerlink" title="4.Spring boot和发送邮件："></a>4.Spring boot和发送邮件：</h3><pre><code>Spring boot发送邮件简化了操作的过程</code></pre><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VScode编辑Html文件实现实时预览" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/">【问题篇】VScode编辑Html文件实现实时预览</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/" class="archive-article-date">
-  	<time datetime="2019-12-13T13:01:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="总过程："><a href="#总过程：" class="headerlink" title="总过程："></a>总过程：</h1><h2 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h2><p>在VScode插件扩展包里搜索 Live service</p>
-<p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkx2PK2mVt74x1z3A7P.GIaqv.zQ86cAYq34*fWEeVDSnKgXbqNyJZzNFTi1lRWhjNaa9VrjAtqcZpx.2QqQyPZY!/b&bo=DgMqAgAAAAADBwc!&rf=viewer_4" alt="alt t"></p>
-<hr>
-<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>创建一个HTML文件后右键选择</p>
-<p><img src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk9b1a6njBH35hydcFvEjaHQSa50X7WwBfANuRdaI4PqApOJ5IFQiVes29H7LaZjEyLxiClFhy9UZ8faL0RcwioI!/b&bo=gwLNAgAAAAADB2w!&rf=viewer_4" alt="alt"></p>
-<hr>
-<h2 id="接下来就可以实现实时预览啦"><a href="#接下来就可以实现实时预览啦" class="headerlink" title="接下来就可以实现实时预览啦"></a>接下来就可以实现实时预览啦</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Base64多次加密和解密不是初始消息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">【Java篇】Base64多次加密和解密后不是初始消息问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/" class="archive-article-date">
-  	<time datetime="2019-12-13T09:41:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Base64多次加密和解密后不是初始消息问题"><a href="#Base64多次加密和解密后不是初始消息问题" class="headerlink" title="Base64多次加密和解密后不是初始消息问题"></a>Base64多次加密和解密后不是初始消息问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Base64;</span><br><span class="line"></span><br><span class="line">class encod &#123;</span><br><span class="line">    private final static String SALT &#x3D; &quot;Tsy&quot;;　　　　&#x2F;&#x2F;添加盐值，增加解密难度</span><br><span class="line"></span><br><span class="line">    private final static int REPART &#x3D; 5;　　　　　　　&#x2F;&#x2F;设定加密次数，次数越多解密越难，但是会增加垃圾空间（原因是进行了字符串的修改）</span><br><span class="line"></span><br><span class="line">    public static String encode(String msg) &#123;</span><br><span class="line">        String tsy &#x3D; msg + &quot;&#123;&quot; + SALT + &quot;&#125;&quot;;</span><br><span class="line">        byte[] date &#x3D; tsy.getBytes();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; REPART; i++) &#123;</span><br><span class="line">            date &#x3D; Base64.getEncoder().encode(date);</span><br><span class="line">        &#125;</span><br><span class="line">        return new String(date);</span><br><span class="line">    &#125;</span><br><span class="line">    public static String decode(String msg) &#123;</span><br><span class="line">        byte[] date &#x3D; msg.getBytes();</span><br><span class="line">        for (int i &#x3D; 0; i &lt;REPART; i++) &#123;</span><br><span class="line">            date &#x3D; Base64.getDecoder().decode(date);</span><br><span class="line">        &#125;</span><br><span class="line">        return new String(date).replace(&quot;&#123;Tsy&#125;&quot;, &quot;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class T &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String msg1 &#x3D; &quot;Tsyscv&quot;;</span><br><span class="line">        System.out.println(msg1.hashCode());</span><br><span class="line">        String msg &#x3D; encod.encode(&quot;www.mldn.cn&quot;);</span><br><span class="line">        System.out.println(msg);</span><br><span class="line">        System.out.println(encod.decode(msg));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>以上是在加密中使用的java代码，但是却出现了解密后不是原消息的问题</p>
-<hr>
-<h2 id="原因如下："><a href="#原因如下：" class="headerlink" title="原因如下："></a>原因如下：</h2><p>使用Java.util中的Base64进行五次带盐值加密后，再进行解密，发现消息并不是我们原本发送的消息，原因是Base64.getDecoder().decode(byte[])和Base64.getDecoder().decode(Bytebuffer)俩个decode传入的参数不一样，只有使用decode传入byte流</p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -926,8 +356,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

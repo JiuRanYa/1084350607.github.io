@@ -149,6 +149,269 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用padding-top实现响应式背景图片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/18/%E4%BD%BF%E7%94%A8padding-top%E5%AE%9E%E7%8E%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">【前端篇-HTML和CSS】使用padding-top实现响应式背景图片</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/18/%E4%BD%BF%E7%94%A8padding-top%E5%AE%9E%E7%8E%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" class="archive-article-date">
+  	<time datetime="2019-12-18T08:36:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-使用padding-top-percentage-实现响应式背景图片"><a href="#一-使用padding-top-percentage-实现响应式背景图片" class="headerlink" title="一.使用padding-top:(percentage)实现响应式背景图片"></a>一.使用padding-top:(percentage)实现响应式背景图片</h1><pre><code>我门都知道，处理在响应性布局的时候，背景图片都是等比例缩放，比如上面的使用图片的情况，使用&lt;img /&gt; 引入的图片的话，那么设置她们的width属性为100%；&lt;img src=”” width=”100%”/&gt; 的话，高度就会等比例缩放，这是图片，但是如果是背景图片呢？我门之前的项目中的常见的做法是根据css3媒体查询的方法来做的，根据不同手机的分辨率等不同，来等比例缩放背景图的高度，虽然这种方式是可以解决问题的，但是这种通过人肉的方式来进行设置并不好，也很繁琐，今天我门来学习使用padding－top这么一个属性来设置了；
+
+实现的基本原理：将使用到保持元素的宽高比的技巧，为元素添加垂直方向的padding-top的值，使用百分比的形式，这个值是相对于元素的宽而定的，比如我上面的一张图片的宽度是1024px，高度为316px；那么现在的  
+padding-top = （高度 / 宽度 ）* 100% ＝ （316 ／ 1024）* 100% ＝  30.85%;</code></pre><p>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.demo1-1 &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.zoomImage &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 0;</span><br><span class="line">  padding-top: 100%;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  background-position: center center;</span><br><span class="line">  background-repeat: no-repeat;</span><br><span class="line">  background-size: cover;</span><br><span class="line">  -webkit-background-size: cover;</span><br><span class="line">  -moz-background-size: cover;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/18/%E4%BD%BF%E7%94%A8padding-top%E5%AE%9E%E7%8E%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-【前端学习-CSS】CSS文本属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/17/%E3%80%90%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-CSS%E3%80%91CSS%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7/">【前端学习-CSS】CSS文本属性</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/17/%E3%80%90%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-CSS%E3%80%91CSS%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7/" class="archive-article-date">
+  	<time datetime="2019-12-17T15:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/17/%E3%80%90%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-CSS%E3%80%91CSS%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-【Java篇】网络编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">【Java篇】网络编程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2019-12-16T13:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-网络编程简介"><a href="#一-网络编程简介" class="headerlink" title="一. 网络编程简介"></a>一. 网络编程简介</h1><pre><code>所谓的网络编程指的就是多台主机之间的数据通讯操作</code></pre><h1 id="二-Echo程序模型"><a href="#二-Echo程序模型" class="headerlink" title="二. Echo程序模型"></a>二. Echo程序模型</h1><h2 id="1-TCP程序的基本实现"><a href="#1-TCP程序的基本实现" class="headerlink" title="1. TCP程序的基本实现"></a>1. TCP程序的基本实现</h2><pre><code>TCP的程序开发是网络程序的最基本的开发模型，其核心特点是使用俩个类实现数据的交互处  </code></pre><ul>
+<li>ServerSocket()  —&gt;   服务端</li>
+<li>Socket()   —&gt;   客户端<br>ServerSocket的主要目的是设置服务器的监听端口，而Socket需要指明要链接的服务器地址和端口</li>
+<li>ServerSocket​(int port)</li>
+<li>Socket​(String host, int port)<h2 id="2-Echo模型实现"><a href="#2-Echo模型实现" class="headerlink" title="2. Echo模型实现"></a>2. Echo模型实现</h2></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-【Java篇】Stream数据流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/">【Java篇】Stream数据流</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/" class="archive-article-date">
+  	<time datetime="2019-12-16T11:53:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-Stream数据流简介"><a href="#一-Stream数据流简介" class="headerlink" title="一. Stream数据流简介"></a>一. Stream数据流简介</h1><p>从JDK1.8开始，由于已经进入了大数据时代，所以在类集里面也支持有数据的流式分析处理操作，，所以java提供了Stream的接口，同时在Collection接口里面也提供有为此接口实例化的方法</p>
+<ul>
+<li>default Stream<E> parallelStream​()：返回可能并行（多个CPU同时分析）的Stream数据流</li>
+<li>default Stream<E> stream​()：返回一个序列Stream  <h2 id="Stream基本操作："><a href="#Stream基本操作：" class="headerlink" title="Stream基本操作："></a>Stream基本操作：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">	List&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">	Collections.addAll(list,&quot;java&quot;, &quot;python&quot;,&quot;go&quot;);</span><br><span class="line">	Stream&lt;String&gt; stream &#x3D; list.stream();</span><br><span class="line">	System.out.println(stream.count());</span><br><span class="line">       &#x2F;*实现查询数据中包含J的数据*&#x2F;</span><br><span class="line">       System.out.println(stream.filter((ele)-&gt;ele.toUpperCase().contains(&quot;J&quot;)).count());</span><br><span class="line"></span><br><span class="line">       &#x2F;*查找存在J字母的数据*&#x2F;</span><br><span class="line">       List&lt;String&gt; result &#x3D; stream.filter((ele)-&gt;ele.toUpperCase().contains(&quot;J&quot;)).collect(Collectors.toList());</span><br><span class="line">	System.out.println(result);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java中Comparable接口研究" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -563,331 +826,6 @@ Set接口是根据equals定义的，而TreeSet是根据compareTo（或compare）
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Listener-监听器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/">【JavaWeb篇】监听器&lt;Listener&gt;</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2019-12-14T15:15:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-什么叫做Listener（监听器）"><a href="#一-什么叫做Listener（监听器）" class="headerlink" title="一. 什么叫做Listener（监听器）"></a>一. 什么叫做Listener（监听器）</h1><h2 id="Javaweb三大组件："><a href="#Javaweb三大组件：" class="headerlink" title="Javaweb三大组件："></a>Javaweb三大组件：</h2><ul>
-<li>Servlet</li>
-<li>Listener</li>
-<li>Filter</li>
-</ul>
-<h2 id="监听器："><a href="#监听器：" class="headerlink" title="监听器："></a>监听器：</h2><ul>
-<li>他是一个接口，内容由设计者实现</li>
-<li>他需要注册，例如注册在按钮上</li>
-<li>监听器中的方法，会在特殊事件发生时被调用</li>
-</ul>
-<h2 id="观察者："><a href="#观察者：" class="headerlink" title="观察者："></a>观察者：</h2><ul>
-<li>事件源<ul>
-<li>小偷 </li>
-</ul>
-</li>
-<li>事件<ul>
-<li>偷东西</li>
-</ul>
-</li>
-<li>监听器<ul>
-<li>警察</li>
-<li>监听器的方法：抓捕</li>
-</ul>
-</li>
-</ul>
-<p>&emsp;监听器注册在事件源上，等待事件的发生后执行监听器功能</p>
-<h1 id="二-监听器概述以及生命周期监听器"><a href="#二-监听器概述以及生命周期监听器" class="headerlink" title="二.监听器概述以及生命周期监听器"></a>二.监听器概述以及生命周期监听器</h1><h2 id="—————————-Javaweb中的监听器————————–"><a href="#—————————-Javaweb中的监听器————————–" class="headerlink" title="—————————-Javaweb中的监听器————————–"></a>—————————-Javaweb中的监听器————————–</h2><h2 id="1-事件源：三大域-（域对象的作用：保存数据，获取数据，共享数据）："><a href="#1-事件源：三大域-（域对象的作用：保存数据，获取数据，共享数据）：" class="headerlink" title="1.事件源：三大域  （域对象的作用：保存数据，获取数据，共享数据）："></a>1.事件源：三大域  （域对象的作用：保存数据，获取数据，共享数据）：</h2><ul>
-<li><p>ServletContext（上下文）</p>
-<ul>
-<li>生死监听：ServletContextListener<ul>
-<li>ServletContext出生调用：void contextInitialized(ServletContextEvent sce)  </li>
-<li>ServletContext死亡调用：void contextDestroyed(ServletContextEvent sce)</li>
-</ul>
-</li>
-<li>属性监听：ServletContextAttributeListenr<ul>
-<li>ServletContext设置属性调用：attributeAdded(ServletContextAttributeEvent scab)</li>
-<li>ServletContext替换属性调用：attributeRemoved(ServletContextAttributeEvent scab) </li>
-<li>ServletContext移除属性调用：attributeReplaced(ServletContextAttributeEvent scab) </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>HttpSession：request.getSession()方法调用后网站才会生成Session</p>
-<ul>
-<li>生死监听：HttpSessionListener<ul>
-<li>他有俩个方法，一个出生调用，一个死亡调用</li>
-</ul>
-</li>
-<li>属性监听：HttpSessionAttributeListenr<ul>
-<li>他有三个方法set，一个在设置属性调用，一个在替换属性调用，一个在移除属性调用</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>ServletRequest</p>
-<ul>
-<li>生死监听：ServletRequestListener<ul>
-<li>他有俩个方法，一个出生调用，一个死亡调用</li>
-</ul>
-</li>
-<li>属性监听：ServletRequestAttributeListenr<ul>
-<li>他有三个方法set，一个在设置属性调用，一个在替换属性调用，一个在移除属性调用  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext-方法；"><a href="#2-三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext-方法；" class="headerlink" title="2.三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext()方法；"></a>2.三个监听器传入的事件分别可以获取自身，如ServletContext传入的Event对象sce可以调用getServletContext()方法；</h2><h1 id="三-JavaWeb中完成编写监听器："><a href="#三-JavaWeb中完成编写监听器：" class="headerlink" title="三.JavaWeb中完成编写监听器："></a>三.JavaWeb中完成编写监听器：</h1><h2 id="1-写一个监听器类-要求必须去实现某个监听器接口"><a href="#1-写一个监听器类-要求必须去实现某个监听器接口" class="headerlink" title="1.写一个监听器类:要求必须去实现某个监听器接口"></a>1.写一个监听器类:要求必须去实现某个监听器接口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">            实现ServletContextListener生死监听  </span><br><span class="line">    ！可以在这个监听器存放一些Tomcat启动时就要完成的代码！</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line">public class AListener implements ServletContextListener &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void contextDestroyed(ServletContextEvent arg0) &#123;</span><br><span class="line">		System.out.println(&quot;死之前&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void contextInitialized(ServletContextEvent arg0) &#123;</span><br><span class="line">		System.out.println(&quot;出生后&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="在XML文件中配置如下：-只需要指定类名"><a href="#在XML文件中配置如下：-只需要指定类名" class="headerlink" title="在XML文件中配置如下：(只需要指定类名)"></a>在XML文件中配置如下：(只需要指定类名)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;listener&gt;</span><br><span class="line">	&lt;listener-class&gt;tsy.c.AListener&lt;&#x2F;listener-class&gt;</span><br><span class="line">&lt;&#x2F;listener&gt;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Listener-%E7%9B%91%E5%90%AC%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Filter分IP统计w访问次数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/">【JavaWeb篇】Filter分IP统计访问次数</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2019-12-14T15:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>统计工作需要在所有资源之前都执行，<br>所以我们可以放在Filter中此过滤器不进行拦截工作，只进行统计<br>用Map来装载统计数据，Map在Filter中用来保存数据  </p>
-<p>Map在服务器启动的时候创建，这时候我们会想到在Filter中的init方法中进行创建Map<br>但是此时就有一个问题出现了，如果以后我们的浏览器有多个Filter，为什么要放在这个Filter中呢</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Filter%E5%88%86IP%E7%BB%9F%E8%AE%A1w%E8%AE%BF%E9%97%AE%E6%AC%A1%E6%95%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Chrome浏览器打开是毒霸浏览器解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">【问题篇】Chrome浏览器打开是毒霸浏览器解决方案</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2019-12-14T14:34:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-如果电脑下载了驱动精灵："><a href="#1-如果电脑下载了驱动精灵：" class="headerlink" title="1.如果电脑下载了驱动精灵："></a>1.如果电脑下载了驱动精灵：</h1><h2 id="打开驱动精灵"><a href="#打开驱动精灵" class="headerlink" title="打开驱动精灵"></a>打开驱动精灵</h2><h2 id="点击百宝箱功能"><a href="#点击百宝箱功能" class="headerlink" title="点击百宝箱功能"></a>点击百宝箱功能</h2><h2 id="取消设定毒霸为默认浏览器"><a href="#取消设定毒霸为默认浏览器" class="headerlink" title="取消设定毒霸为默认浏览器"></a>取消设定毒霸为默认浏览器</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%93%E5%BC%80%E6%98%AF%E6%AF%92%E9%9C%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-tomcat无法启动，端口被占用解决方案" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">【问题篇】tomcat无法启动，端口被占用解决方案</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="archive-article-date">
-  	<time datetime="2019-12-14T14:22:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在我启动tomcat的时候，出现以下报错</p>
-<p><img src="http://chuantu.xyz/t6/704/1576343379x2073530527.png" alt="alt"></p>
-<p>原因是tomcat的8080端口被占用</p>
-<h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><h2 id="1-在cmd中输入netstat-ano"><a href="#1-在cmd中输入netstat-ano" class="headerlink" title="1.在cmd中输入netstat -ano"></a>1.在cmd中输入netstat -ano</h2><h2 id="2-在端口列表中找到8080端口对应的PID"><a href="#2-在端口列表中找到8080端口对应的PID" class="headerlink" title="2.在端口列表中找到8080端口对应的PID"></a>2.在端口列表中找到8080端口对应的PID</h2><h2 id="3-在任务管理器服务页面关闭PID对应进程"><a href="#3-在任务管理器服务页面关闭PID对应进程" class="headerlink" title="3.在任务管理器服务页面关闭PID对应进程"></a>3.在任务管理器服务页面关闭PID对应进程</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/tomcat%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">展开全文 >></a>
         </p>
       
 
