@@ -149,6 +149,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java输入与输出支持" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/">【Java篇】java输入与输出支持</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/" class="archive-article-date">
+  	<time datetime="2019-12-15T07:55:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-System类对IO的支持"><a href="#一-System类对IO的支持" class="headerlink" title="一. System类对IO的支持"></a>一. System类对IO的支持</h1><h2 id="在系统类之中提供有三个常量"><a href="#在系统类之中提供有三个常量" class="headerlink" title="在系统类之中提供有三个常量"></a>在系统类之中提供有三个常量</h2><ul>
+<li>out –&gt;PrintStream 标准输出流</li>
+<li>in –&gt;InputStream标准输入流</li>
+<li>err –&gt;PrintStream标准错误输出流  </li>
+</ul>
+<p>System.out和System.err是同一种类型，如果使用的是eclipse，system.err会使用红色字体</p>
+<h1 id="二-BufferedReader缓冲输入流"><a href="#二-BufferedReader缓冲输入流" class="headerlink" title="二. BufferedReader缓冲输入流"></a>二. BufferedReader缓冲输入流</h1><h2 id="BufferedReader提供的是一个缓冲字符输入流的概念"><a href="#BufferedReader提供的是一个缓冲字符输入流的概念" class="headerlink" title="BufferedReader提供的是一个缓冲字符输入流的概念"></a>BufferedReader提供的是一个缓冲字符输入流的概念</h2><h1 id="三-Scanner扫描流"><a href="#三-Scanner扫描流" class="headerlink" title="三. Scanner扫描流"></a>三. Scanner扫描流</h1><h2 id="Scanner是从JDK1-5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类"><a href="#Scanner是从JDK1-5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类" class="headerlink" title="Scanner是从JDK1.5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类"></a>Scanner是从JDK1.5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类</h2><p>Scanner中有以下几个常用方法：</p>
+<ul>
+<li>public String next​() 读取数据，返回一个字符串</li>
+<li>public boolean hasNext​() 判断是否还有数据</li>
+<li>public int nextInt​(int radix) 将输入数据转换为Int</li>
+</ul>
+<p>Scanner整体设计优于BufferedReader<br>在今后开发中推荐使用Scanner<br>同时hasnext方法还可以进行正则匹配判断</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Listener-监听器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -832,77 +907,9 @@
 
 
   
-    <article id="post-Base64多次加密和解密不是初始消息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">【Java篇】Base64多次加密和解密后不是初始消息问题</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/" class="archive-article-date">
-  	<time datetime="2019-12-13T09:41:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Base64多次加密和解密后不是初始消息问题"><a href="#Base64多次加密和解密后不是初始消息问题" class="headerlink" title="Base64多次加密和解密后不是初始消息问题"></a>Base64多次加密和解密后不是初始消息问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Base64;</span><br><span class="line"></span><br><span class="line">class encod &#123;</span><br><span class="line">    private final static String SALT &#x3D; &quot;Tsy&quot;;　　　　&#x2F;&#x2F;添加盐值，增加解密难度</span><br><span class="line"></span><br><span class="line">    private final static int REPART &#x3D; 5;　　　　　　　&#x2F;&#x2F;设定加密次数，次数越多解密越难，但是会增加垃圾空间（原因是进行了字符串的修改）</span><br><span class="line"></span><br><span class="line">    public static String encode(String msg) &#123;</span><br><span class="line">        String tsy &#x3D; msg + &quot;&#123;&quot; + SALT + &quot;&#125;&quot;;</span><br><span class="line">        byte[] date &#x3D; tsy.getBytes();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; REPART; i++) &#123;</span><br><span class="line">            date &#x3D; Base64.getEncoder().encode(date);</span><br><span class="line">        &#125;</span><br><span class="line">        return new String(date);</span><br><span class="line">    &#125;</span><br><span class="line">    public static String decode(String msg) &#123;</span><br><span class="line">        byte[] date &#x3D; msg.getBytes();</span><br><span class="line">        for (int i &#x3D; 0; i &lt;REPART; i++) &#123;</span><br><span class="line">            date &#x3D; Base64.getDecoder().decode(date);</span><br><span class="line">        &#125;</span><br><span class="line">        return new String(date).replace(&quot;&#123;Tsy&#125;&quot;, &quot;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class T &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String msg1 &#x3D; &quot;Tsyscv&quot;;</span><br><span class="line">        System.out.println(msg1.hashCode());</span><br><span class="line">        String msg &#x3D; encod.encode(&quot;www.mldn.cn&quot;);</span><br><span class="line">        System.out.println(msg);</span><br><span class="line">        System.out.println(encod.decode(msg));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>以上是在加密中使用的java代码，但是却出现了解密后不是原消息的问题</p>
-<hr>
-<h2 id="原因如下："><a href="#原因如下：" class="headerlink" title="原因如下："></a>原因如下：</h2><p>使用Java.util中的Base64进行五次带盐值加密后，再进行解密，发现消息并不是我们原本发送的消息，原因是Base64.getDecoder().decode(byte[])和Base64.getDecoder().decode(Bytebuffer)俩个decode传入的参数不一样，只有使用decode传入byte流</p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 

@@ -149,6 +149,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-transform-translate-50-，-50-）实现水平居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/23/transform-translate-50-%EF%BC%8C-50-%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/">transform: translate(-50%，-50%）实现水平居中</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/23/transform-translate-50-%EF%BC%8C-50-%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/" class="archive-article-date">
+  	<time datetime="2019-12-23T10:45:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>translate()函数是css3的新特性.在不知道自身宽高的情况下，可以利用它来进行水平垂直居中
+当使用：top: 50%;left: 50%;， 是以左上角为原点，故不处于中心位置
+translate(-50%,-50%) 作用是，往上（x轴）,左（y轴）移动自身长宽的 50%，以使其居于中心位置。</code></pre><h1 id="具体定位代码如下"><a href="#具体定位代码如下" class="headerlink" title="具体定位代码如下"></a>具体定位代码如下</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;</span><br><span class="line">top: 50%;</span><br><span class="line">left: 50%;</span><br><span class="line">transform: translate(-50%,-50%);</span><br></pre></td></tr></table></figure>
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/23/transform-translate-50-%EF%BC%8C-50-%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-使用padding-top实现响应式背景图片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -780,84 +847,9 @@ Set接口是根据equals定义的，而TreeSet是根据compareTo（或compare）
 
 
   
-    <article id="post-java输入与输出支持" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/">【Java篇】java输入与输出支持</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/" class="archive-article-date">
-  	<time datetime="2019-12-15T07:55:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-System类对IO的支持"><a href="#一-System类对IO的支持" class="headerlink" title="一. System类对IO的支持"></a>一. System类对IO的支持</h1><h2 id="在系统类之中提供有三个常量"><a href="#在系统类之中提供有三个常量" class="headerlink" title="在系统类之中提供有三个常量"></a>在系统类之中提供有三个常量</h2><ul>
-<li>out –&gt;PrintStream 标准输出流</li>
-<li>in –&gt;InputStream标准输入流</li>
-<li>err –&gt;PrintStream标准错误输出流  </li>
-</ul>
-<p>System.out和System.err是同一种类型，如果使用的是eclipse，system.err会使用红色字体</p>
-<h1 id="二-BufferedReader缓冲输入流"><a href="#二-BufferedReader缓冲输入流" class="headerlink" title="二. BufferedReader缓冲输入流"></a>二. BufferedReader缓冲输入流</h1><h2 id="BufferedReader提供的是一个缓冲字符输入流的概念"><a href="#BufferedReader提供的是一个缓冲字符输入流的概念" class="headerlink" title="BufferedReader提供的是一个缓冲字符输入流的概念"></a>BufferedReader提供的是一个缓冲字符输入流的概念</h2><h1 id="三-Scanner扫描流"><a href="#三-Scanner扫描流" class="headerlink" title="三. Scanner扫描流"></a>三. Scanner扫描流</h1><h2 id="Scanner是从JDK1-5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类"><a href="#Scanner是从JDK1-5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类" class="headerlink" title="Scanner是从JDK1.5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类"></a>Scanner是从JDK1.5之后追加的一个程序类，主要目的是为了解决输入流的访问问题的可以理解为BufferedReader的替代产品类</h2><p>Scanner中有以下几个常用方法：</p>
-<ul>
-<li>public String next​() 读取数据，返回一个字符串</li>
-<li>public boolean hasNext​() 判断是否还有数据</li>
-<li>public int nextInt​(int radix) 将输入数据转换为Int</li>
-</ul>
-<p>Scanner整体设计优于BufferedReader<br>在今后开发中推荐使用Scanner<br>同时hasnext方法还可以进行正则匹配判断</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/15/java%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA%E6%94%AF%E6%8C%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 

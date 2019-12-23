@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 欢迎来到同思远的博客</title>
+  <title>欢迎来到同思远的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
 <meta property="og:type" content="website">
 <meta property="og:title" content="欢迎来到同思远的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;3&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到同思远的博客">
 <meta property="og:description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
 <meta property="og:locale" content="en_US">
@@ -149,292 +149,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Base64多次加密和解密不是初始消息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">【Java篇】Base64多次加密和解密后不是初始消息问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/" class="archive-article-date">
+  	<time datetime="2019-12-13T09:41:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-13</time>
+</a>
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Base64多次加密和解密后不是初始消息问题"><a href="#Base64多次加密和解密后不是初始消息问题" class="headerlink" title="Base64多次加密和解密后不是初始消息问题"></a>Base64多次加密和解密后不是初始消息问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Base64;</span><br><span class="line"></span><br><span class="line">class encod &#123;</span><br><span class="line">    private final static String SALT &#x3D; &quot;Tsy&quot;;　　　　&#x2F;&#x2F;添加盐值，增加解密难度</span><br><span class="line"></span><br><span class="line">    private final static int REPART &#x3D; 5;　　　　　　　&#x2F;&#x2F;设定加密次数，次数越多解密越难，但是会增加垃圾空间（原因是进行了字符串的修改）</span><br><span class="line"></span><br><span class="line">    public static String encode(String msg) &#123;</span><br><span class="line">        String tsy &#x3D; msg + &quot;&#123;&quot; + SALT + &quot;&#125;&quot;;</span><br><span class="line">        byte[] date &#x3D; tsy.getBytes();</span><br><span class="line">        for (int i &#x3D; 0; i &lt; REPART; i++) &#123;</span><br><span class="line">            date &#x3D; Base64.getEncoder().encode(date);</span><br><span class="line">        &#125;</span><br><span class="line">        return new String(date);</span><br><span class="line">    &#125;</span><br><span class="line">    public static String decode(String msg) &#123;</span><br><span class="line">        byte[] date &#x3D; msg.getBytes();</span><br><span class="line">        for (int i &#x3D; 0; i &lt;REPART; i++) &#123;</span><br><span class="line">            date &#x3D; Base64.getDecoder().decode(date);</span><br><span class="line">        &#125;</span><br><span class="line">        return new String(date).replace(&quot;&#123;Tsy&#125;&quot;, &quot;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class T &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String msg1 &#x3D; &quot;Tsyscv&quot;;</span><br><span class="line">        System.out.println(msg1.hashCode());</span><br><span class="line">        String msg &#x3D; encod.encode(&quot;www.mldn.cn&quot;);</span><br><span class="line">        System.out.println(msg);</span><br><span class="line">        System.out.println(encod.decode(msg));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>以上是在加密中使用的java代码，但是却出现了解密后不是原消息的问题</p>
+<hr>
+<h2 id="原因如下："><a href="#原因如下：" class="headerlink" title="原因如下："></a>原因如下：</h2><p>使用Java.util中的Base64进行五次带盐值加密后，再进行解密，发现消息并不是我们原本发送的消息，原因是Base64.getDecoder().decode(byte[])和Base64.getDecoder().decode(Bytebuffer)俩个decode传入的参数不一样，只有使用decode传入byte流</p>
+<hr>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/23/transform-translate-50-%EF%BC%8C-50-%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/" class="archive-article-date">
-  	<time datetime="2019-12-23T10:45:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/23/transform-translate-50-%EF%BC%8C-50-%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/">transform: translate(-50%，-50%）实现水平居中</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/13/Base64%E5%A4%9A%E6%AC%A1%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86%E4%B8%8D%E6%98%AF%E5%88%9D%E5%A7%8B%E6%B6%88%E6%81%AF/">展开全文 >></a>
+        </p>
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/18/%E4%BD%BF%E7%94%A8padding-top%E5%AE%9E%E7%8E%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" class="archive-article-date">
-  	<time datetime="2019-12-18T08:36:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-18</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/18/%E4%BD%BF%E7%94%A8padding-top%E5%AE%9E%E7%8E%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">【前端篇-HTML和CSS】使用padding-top实现响应式背景图片</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/17/%E3%80%90%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-CSS%E3%80%91CSS%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2019-12-17T15:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/17/%E3%80%90%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-CSS%E3%80%91CSS%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7/">【前端学习-CSS】CSS文本属性</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-12-16T13:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">【Java篇】网络编程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2019-12-16T11:53:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/">【Java篇】Stream数据流</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/16/Java%E4%B8%ADComparable%E6%8E%A5%E5%8F%A3%E7%A0%94%E7%A9%B6/" class="archive-article-date">
-  	<time datetime="2019-12-16T04:56:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/16/Java%E4%B8%ADComparable%E6%8E%A5%E5%8F%A3%E7%A0%94%E7%A9%B6/">【Java篇】Java中Comparable接口研究&lt;Comparable&gt;</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/16/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BSet%E9%9B%86%E5%90%88%5D/" class="archive-article-date">
-  	<time datetime="2019-12-16T04:19:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/16/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BSet%E9%9B%86%E5%90%88%5D/">【Java篇】Java类集框架&lt;Set集合&gt;</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BList%E9%9B%86%E5%90%88%5D/" class="archive-article-date">
-  	<time datetime="2019-12-15T09:43:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BList%E9%9B%86%E5%90%88%5D/">【Java篇】Java类集框架&lt;List&gt;</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/15/Java%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2019-12-15T08:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/15/Java%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/">【Java篇】Java为什么要在类中声明一个无参构造方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/15/Java%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2019-12-15T08:21:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/15/Java%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96/">【Java篇】Java对象序列化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
-
-    
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
     </nav>
   
 
@@ -458,9 +243,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
