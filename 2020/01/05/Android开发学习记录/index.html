@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>【框架篇】Spring boot 邮件发送实战记录 | 欢迎来到同思远的博客</title>
+  <title>Android开发学习记录 | 欢迎来到同思远的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一部分 背景（前置知识）一.邮件发送原理：1.邮件传输协议:SMTP协议和POP3协议2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）二.邮件发送流程：  三.Spring Boot介绍1.约定大于配置2.简单快速开发3.强大的生态链4.Spring boot和发送邮件：Spring boot发送邮件简化了操作的过程">
+  <meta name="description" content="Android开发学习笔记：一.安卓开发四大组件 活动（Activity） 界面层（应用程序）看到的所有界面均放在活动层。 服务（Service）  后台，即使退出也仍然运行 广播接收器（Broadcast Receiver） 接受广播消息，电话短信等等 内容提供器（Content Provider）   应用程序之间共享数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【框架篇】Spring boot 邮件发送实战记录">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;14&#x2F;Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95&#x2F;index.html">
+<meta property="og:title" content="Android开发学习记录">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;05&#x2F;Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到同思远的博客">
-<meta property="og:description" content="第一部分 背景（前置知识）一.邮件发送原理：1.邮件传输协议:SMTP协议和POP3协议2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）二.邮件发送流程：  三.Spring Boot介绍1.约定大于配置2.简单快速开发3.强大的生态链4.Spring boot和发送邮件：Spring boot发送邮件简化了操作的过程">
+<meta property="og:description" content="Android开发学习笔记：一.安卓开发四大组件 活动（Activity） 界面层（应用程序）看到的所有界面均放在活动层。 服务（Service）  后台，即使退出也仍然运行 广播接收器（Broadcast Receiver） 接受广播消息，电话短信等等 内容提供器（Content Provider）   应用程序之间共享数据">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http:&#x2F;&#x2F;a1.qpic.cn&#x2F;psc?&#x2F;V12mUYwE30s05c&#x2F;1nSAZ*B78DPTEG5idIpYk0EarqPloBkkxkCy3I6JOJrPNIHXyX3ap3jRcVOiTq6amkCz4.SFp9eTe3KMkQmnrG3vUq2hSEwAqf1bn0B4pdU!&#x2F;c&amp;ek&#x3D;1&amp;kp&#x3D;1&amp;pt&#x3D;0&amp;bo&#x3D;gAKpAQAAAAADFxg!&amp;tl&#x3D;1&amp;vuin&#x3D;1084350607&amp;tm&#x3D;1576328400&amp;sce&#x3D;60-2-2&amp;rf&#x3D;viewer_4">
-<meta property="article:published_time" content="2019-12-14T11:13:32.000Z">
-<meta property="article:modified_time" content="2019-12-16T05:24:55.889Z">
+<meta property="article:published_time" content="2020-01-05T10:13:57.000Z">
+<meta property="article:modified_time" content="2020-01-05T12:28:12.613Z">
 <meta property="article:author" content="Tsy">
 <meta property="article:tag" content="学习，开源，技术，分享">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;a1.qpic.cn&#x2F;psc?&#x2F;V12mUYwE30s05c&#x2F;1nSAZ*B78DPTEG5idIpYk0EarqPloBkkxkCy3I6JOJrPNIHXyX3ap3jRcVOiTq6amkCz4.SFp9eTe3KMkQmnrG3vUq2hSEwAqf1bn0B4pdU!&#x2F;c&amp;ek&#x3D;1&amp;kp&#x3D;1&amp;pt&#x3D;0&amp;bo&#x3D;gAKpAQAAAAADFxg!&amp;tl&#x3D;1&amp;vuin&#x3D;1084350607&amp;tm&#x3D;1576328400&amp;sce&#x3D;60-2-2&amp;rf&#x3D;viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="欢迎来到同思远的博客" type="application/atom+xml">
   
@@ -151,28 +149,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Spring-boot-邮件发送实战记录" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Android开发学习记录" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      【框架篇】Spring boot 邮件发送实战记录
+      Android开发学习记录
     </h1>
   
 
         
-        <a href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:13:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
+        <a href="/2020/01/05/Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="archive-article-date">
+  	<time datetime="2020-01-05T10:13:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="第一部分-背景（前置知识）"><a href="#第一部分-背景（前置知识）" class="headerlink" title="第一部分 背景（前置知识）"></a>第一部分 背景（前置知识）</h1><h2 id="一-邮件发送原理："><a href="#一-邮件发送原理：" class="headerlink" title="一.邮件发送原理："></a>一.邮件发送原理：</h2><h3 id="1-邮件传输协议-SMTP协议和POP3协议"><a href="#1-邮件传输协议-SMTP协议和POP3协议" class="headerlink" title="1.邮件传输协议:SMTP协议和POP3协议"></a>1.邮件传输协议:SMTP协议和POP3协议</h3><h3 id="2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"><a href="#2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）" class="headerlink" title="2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"></a>2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）</h3><h2 id="二-邮件发送流程："><a href="#二-邮件发送流程：" class="headerlink" title="二.邮件发送流程："></a>二.邮件发送流程：</h2><p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk0EarqPloBkkxkCy3I6JOJrPNIHXyX3ap3jRcVOiTq6amkCz4.SFp9eTe3KMkQmnrG3vUq2hSEwAqf1bn0B4pdU!/c&ek=1&kp=1&pt=0&bo=gAKpAQAAAAADFxg!&tl=1&vuin=1084350607&tm=1576328400&sce=60-2-2&rf=viewer_4" alt="alt "> </p>
-<h2 id="三-Spring-Boot介绍"><a href="#三-Spring-Boot介绍" class="headerlink" title="三.Spring Boot介绍"></a>三.Spring Boot介绍</h2><h3 id="1-约定大于配置"><a href="#1-约定大于配置" class="headerlink" title="1.约定大于配置"></a>1.约定大于配置</h3><h3 id="2-简单快速开发"><a href="#2-简单快速开发" class="headerlink" title="2.简单快速开发"></a>2.简单快速开发</h3><h3 id="3-强大的生态链"><a href="#3-强大的生态链" class="headerlink" title="3.强大的生态链"></a>3.强大的生态链</h3><h3 id="4-Spring-boot和发送邮件："><a href="#4-Spring-boot和发送邮件：" class="headerlink" title="4.Spring boot和发送邮件："></a>4.Spring boot和发送邮件：</h3><pre><code>Spring boot发送邮件简化了操作的过程</code></pre><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+        <h1 id="Android开发学习笔记："><a href="#Android开发学习笔记：" class="headerlink" title="Android开发学习笔记："></a>Android开发学习笔记：</h1><h2 id="一-安卓开发四大组件"><a href="#一-安卓开发四大组件" class="headerlink" title="一.安卓开发四大组件"></a>一.安卓开发四大组件</h2><ul>
+<li>活动（Activity） 界面层（应用程序）看到的所有界面均放在活动层。</li>
+<li>服务（Service）  后台，即使退出也仍然运行</li>
+<li>广播接收器（Broadcast Receiver） 接受广播消息，电话短信等等</li>
+<li>内容提供器（Content Provider）   应用程序之间共享数据</li>
+</ul>
+
       
 
       
@@ -261,7 +264,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/05/Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,18 +278,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          【JavaWeb篇】Servlet实现验证码
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/13/VScode%E7%BC%96%E8%BE%91Html%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%AE%9E%E6%97%B6%E9%A2%84%E8%A7%88/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">【问题篇】VScode编辑Html文件实现实时预览</div>
+    <a href="/2019/12/23/transform-translate-50-%EF%BC%8C-50-%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">transform: translate(-50%，-50%）实现水平居中</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -313,7 +307,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第一部分-背景（前置知识）"><span class="toc-number">1.</span> <span class="toc-text">第一部分 背景（前置知识）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-邮件发送原理："><span class="toc-number">1.1.</span> <span class="toc-text">一.邮件发送原理：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-邮件传输协议-SMTP协议和POP3协议"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.邮件传输协议:SMTP协议和POP3协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-邮件发送流程："><span class="toc-number">1.2.</span> <span class="toc-text">二.邮件发送流程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-Spring-Boot介绍"><span class="toc-number">1.3.</span> <span class="toc-text">三.Spring Boot介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-约定大于配置"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.约定大于配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-简单快速开发"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.简单快速开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-强大的生态链"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.强大的生态链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Spring-boot和发送邮件："><span class="toc-number">1.3.4.</span> <span class="toc-text">4.Spring boot和发送邮件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.3.5.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Android开发学习笔记："><span class="toc-number">1.</span> <span class="toc-text">Android开发学习笔记：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-安卓开发四大组件"><span class="toc-number">1.1.</span> <span class="toc-text">一.安卓开发四大组件</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
