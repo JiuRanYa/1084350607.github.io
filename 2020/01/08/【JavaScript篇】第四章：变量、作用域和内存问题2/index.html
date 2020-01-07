@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>欢迎来到同思远的博客</title>
+  <title>【JavaScript篇】第四章：变量、作用域和内存问题 | 欢迎来到同思远的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="欢迎来到同思远的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【JavaScript篇】第四章：变量、作用域和内存问题">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;08&#x2F;%E3%80%90JavaScript%E7%AF%87%E3%80%91%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%982&#x2F;index.html">
 <meta property="og:site_name" content="欢迎来到同思远的博客">
 <meta property="og:description" content="东北大学秦皇岛分校18级电商学子 认真钻研技术">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-07T18:48:22.000Z">
+<meta property="article:modified_time" content="2020-01-07T18:48:59.133Z">
 <meta property="article:author" content="Tsy">
 <meta property="article:tag" content="学习，开源，技术，分享">
 <meta name="twitter:card" content="summary">
@@ -147,16 +149,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-【JavaScript篇】第四章：变量、作用域和内存问题2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-【JavaScript篇】第四章：变量、作用域和内存问题2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/08/%E3%80%90JavaScript%E7%AF%87%E3%80%91%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%982/">【JavaScript篇】第四章：变量、作用域和内存问题</a>
+    <h1 class="article-title" itemprop="name">
+      【JavaScript篇】第四章：变量、作用域和内存问题
     </h1>
   
 
@@ -173,6 +173,37 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk61vBw7Y7P3n59Y8ThjyVVgtNOpBg6PYBfsHcivwMUiCxpMccLtLgPRDrFAJZxHdXJ7KHzPzZIxClspESFjP8m4!/b&amp;bo=gwG8AQAAAAADFw0!&amp;rf=viewer_4">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYkwuX7imdm5Pyj.x3.6l53dRBgdPKQq.Oh1QVI5J4iKmmr5gwR9Gq8vUHwlZPLsr23GJ9ZeIC5xQKhG.EqxvZs*I!/b&amp;bo=ZwFiAQAAAAADByc!&amp;rf=viewer_4">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -180,16 +211,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/08/%E3%80%90JavaScript%E7%AF%87%E3%80%91%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%982/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/08/%E3%80%90JavaScript%E7%AF%87%E3%80%91%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%982/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/06/%E3%80%90JavaScript%E7%AF%87%E3%80%91%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【JavaScript篇】第四章：变量、作用域和内存问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -204,688 +294,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-【JavaScript篇】第四章：变量、作用域和内存问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/06/%E3%80%90JavaScript%E7%AF%87%E3%80%91%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98/">【JavaScript篇】第四章：变量、作用域和内存问题</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/06/%E3%80%90JavaScript%E7%AF%87%E3%80%91%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-01-06T08:36:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-基本类型和引用类型的值"><a href="#一-基本类型和引用类型的值" class="headerlink" title="一.基本类型和引用类型的值"></a>一.基本类型和引用类型的值</h1><h2 id="1-基本类型和引用类型的值"><a href="#1-基本类型和引用类型的值" class="headerlink" title="1.基本类型和引用类型的值"></a>1.基本类型和引用类型的值</h2><p>JavaScript中的变量分为俩类:</p>
-<ul>
-<li>基本类型值（储存在栈中，按值访问）：Undefined、Null、Boolean、Number和String物种基本数据类型</li>
-<li>引用类型值（储存在堆中，按引用访问）：Object、Array、Function  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注释：引用类型值才能添加属性值，不能给基本类型值添加属性，尽管这样做不会导致错误，但会返回Undefined导致数据丢失</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="2-复制变量值"><a href="#2-复制变量值" class="headerlink" title="2.复制变量值"></a>2.复制变量值</h2><h3 id="情况一-复制基本变量值："><a href="#情况一-复制基本变量值：" class="headerlink" title="情况一:复制基本变量值："></a>情况一:复制基本变量值：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var numb1&#x3D;5;</span><br><span class="line">var numb2&#x3D;numb1;</span><br></pre></td></tr></table></figure>
-<p>此时numb2保存了5的值，但numb1和numb2完全是独立的，分别存放在不同的堆栈中，参与任何操作并且不会互相影响。</p>
-<h3 id="情况二：复制引用变量值："><a href="#情况二：复制引用变量值：" class="headerlink" title="情况二：复制引用变量值："></a>情况二：复制引用变量值：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj1 &#x3D; new Object();</span><br><span class="line">var obj2 &#x3D; obj1;</span><br><span class="line">obj1.name &#x3D; &quot;Hello&quot;;</span><br><span class="line">alert(obj2.name);  &#x2F;&#x2F;&quot;Hello&quot;</span><br></pre></td></tr></table></figure>
-<p>复制引用变量值得时候，复制得是指针，也就是说，俩个指针指向了栈中的同一对象Hello</p>
-<h2 id="3-传递参数"><a href="#3-传递参数" class="headerlink" title="3.传递参数"></a>3.传递参数</h2><p>ECMAscript中所有函数的参数都是按值传递的<br>按值传递：传递的是值的拷贝，传递后互不相关</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">基本类型值的传递遵循基本类型值的复制  </span><br><span class="line">引用类型值的传递遵循引用类型值的复制</span><br></pre></td></tr></table></figure>
-<hr>
-<p>Case1：传入基本类型值：<br>传入函数的外部参数在内部会被赋值给一个局部变量，所以函数内部结构并不会影响外部的变量<br>Eg：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function addTen(num)&#123;</span><br><span class="line">    num +&#x3D; 10 ;</span><br><span class="line">    return num;</span><br><span class="line">&#125;</span><br><span class="line">var count &#x3D; 20;</span><br><span class="line">var result &#x3D; addTen(count);</span><br><span class="line">alert(count);       &#x2F;&#x2F;20 , 没有变化</span><br><span class="line">alert(result);      &#x2F;&#x2F;30</span><br></pre></td></tr></table></figure>
-<hr>
-<p>Case2：传入引用类型值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function setname(obj)&#123;</span><br><span class="line">    obj.name &#x3D; &quot;Nicholas&quot;;</span><br><span class="line">    obj &#x3D; new Object();</span><br><span class="line">    obj.name &#x3D; &quot;Greg&quot;;</span><br><span class="line">&#125;</span><br><span class="line">var person &#x3D; new Object();</span><br><span class="line">setname(person);</span><br><span class="line">alert(person.name);     &#x2F;&#x2F;输出&quot;Nicholas&quot;</span><br></pre></td></tr></table></figure>
-<p>上个例子明显的看出，JavaScript是按值引用的，如果按引用传递，那么最终返回的将是被修改过的”Greg”<br>实际上，在函数内部重写obj时，这个变量引用就是一个局部对象。而这个局部对象会在函数执行完毕后立即被销毁。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以把ECMAscript函数中的参数想象为一个局部变量</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-检测类型"><a href="#4-检测类型" class="headerlink" title="4.检测类型"></a>4.检测类型</h2><p>要检测一个变量是不是基本数据类型，typeof是最佳工具。当变量的值是一个对象或者null的时候，则会返回“Object”  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">但是在检测引用类型的时候，我们往往不想知道他是不是对象，而是想要知道他是什么类型的对象，这时候我们可以用instanceof操作符</span><br><span class="line"></span><br><span class="line">result &#x3D; variable instanceof constructor</span><br><span class="line"></span><br><span class="line">alert（person instanceof Object）&#x2F;&#x2F;检测person是不是Object类型</span><br></pre></td></tr></table></figure>
-
-<h1 id="二-执行环境及作用域："><a href="#二-执行环境及作用域：" class="headerlink" title="二.执行环境及作用域："></a>二.执行环境及作用域：</h1><h2 id="1-执行环境及作用域"><a href="#1-执行环境及作用域" class="headerlink" title="1.执行环境及作用域"></a>1.执行环境及作用域</h2><p>全局执行环境是最外围的一个执行环境。在WEB浏览器中，全局执行环境被认为是window对象。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">每个函数都有自己的执行环境(方便起见有时也称为&quot;环境&quot;)。当执行流进入一个函数时，函数的环境就会被推入另一个环境栈中。而在环境执行之后，栈将其环境弹出，把控制权返回给之前的执行环境。</span><br></pre></td></tr></table></figure></p>
-<p> 当代码在一个环境中执行时，会创建变量对象的一个作用域链。作用域链的用途，是保证对执行环境<br> 有权访问的所有变量和函数的有序访问。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">作用域链中的环境都可以向上搜索作用域链，但是都不可以向下进入任何一个作用域中的环境。</span><br><span class="line"></span><br><span class="line">作用域的前端，始终都是当前执行的代码所在环境的变量对象，而全局变量始终都是作用域链中的最后一个对象，所有我们在进行代码优化的时候，尽量使用局部变量而不是全局变量。</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-延长作用域链"><a href="#2-延长作用域链" class="headerlink" title="2.延长作用域链"></a>2.延长作用域链</h2><p>执行环境分为俩种</p>
-<ul>
-<li>全局</li>
-<li>局部  <h3 id="JavaScript中有俩个语句可以延长作用域链："><a href="#JavaScript中有俩个语句可以延长作用域链：" class="headerlink" title="JavaScript中有俩个语句可以延长作用域链："></a>JavaScript中有俩个语句可以延长作用域链：</h3></li>
-<li>with：会将指定对象添加到作用域链中（有点像Java中的继承）</li>
-<li>try-catch中的catch：catch会创建一个新的变量对象，包含被抛出的错误对象的声明。</li>
-</ul>
-<h2 id="3-没用块级作用域"><a href="#3-没用块级作用域" class="headerlink" title="3.没用块级作用域"></a>3.没用块级作用域</h2><p>JavaScript中没用块级作用域</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if(true)&#123;</span><br><span class="line">    var color &#x3D; &quot;blue&quot;;</span><br><span class="line">&#125;</span><br><span class="line">alert(color);   &#x2F;&#x2F;&quot;blue&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for(var i &#x3D; 0 ; i &lt; 10;i++)&#123;</span><br><span class="line">    doSomething(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(i);       &#x2F;&#x2F;&quot;10&quot;</span><br></pre></td></tr></table></figure>
-<p>看以上俩个例子，在for和if的花括号作用域中，创建的i变量即使在for循环执行结束后，仍然可以在外部进行访问。</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;比较下面两段代码，试述两段代码的不同之处</span><br><span class="line">&#x2F;&#x2F; A--------------------------</span><br><span class="line">var scope &#x3D; &quot;global scope&quot;;</span><br><span class="line">function checkscope()&#123;</span><br><span class="line">    var scope &#x3D; &quot;local scope&quot;;</span><br><span class="line">    function f()&#123;</span><br><span class="line">        return scope;</span><br><span class="line">    &#125;</span><br><span class="line">    return f();</span><br><span class="line">&#125;</span><br><span class="line">checkscope();</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F; B---------------------------</span><br><span class="line">var scope &#x3D; &quot;global scope&quot;;</span><br><span class="line">function checkscope()&#123;</span><br><span class="line">    var scope &#x3D; &quot;local scope&quot;;</span><br><span class="line">    function f()&#123;</span><br><span class="line">        return scope;</span><br><span class="line">    &#125;</span><br><span class="line">    return f;</span><br><span class="line">&#125;</span><br><span class="line">checkscope()();</span><br></pre></td></tr></table></figure>
-
-<p>首先A、B两段代码输出返回的都是 “local scope”。</p>
-<p>本文还有一下概念的解释，非常清晰可用。</p>
-<p>首先是A：</p>
-<p>　　1.进入全局环境上下文，全局环境被压入环境栈，contextStack = [globalContext]</p>
-<p>　　2.全局上下文环境初始化,，同时checkscope函数被创建，此时 checkscope.[[Scope]] = globalContext.scopeChain</p>
-<p>globalContext={<br>variable object:[scope, checkscope],<br>scope chain: variable object // 全局作用域链<br>}<br>　　3.执行checkscope函数，进入checkscope函数上下文，checkscope被压入环境栈，contextStack=[checkscopeContext, globalContext]。随后checkscope上下文被初始化,它会复制checkscope函数的[[Scope]]变量构建作用域，即 checkscopeContext={ scopeChain : [checkscope.[[Scope]]] }</p>
-<p>　　4.checkscope的活动对象被创建 此时 checkscope.activationObject = [arguments], 随后活动对象被当做变量对象用于初始化，checkscope.variableObject = checkscope.activationObject = [arguments, scope, f]，随后变量对象被压入checkscope作用域链前端，(checckscope.scopeChain = [checkscope.variableObject, checkscope.[[Scope]] ]) == [[arguments, scope, f], globalContext.scopeChain]</p>
-<p>　　5.函数f被初始化，f.[[Scope]] = checkscope.scopeChain。</p>
-<p>　　6.checkscope执行流继续往下走到 return f()，进入函数f执行上下文。函数f执行上下文被压入环境栈，contextStack = [fContext, checkscopeContext, globalContext]。函数f重复 第4步 动作。最后 f.scopeChain = [f.variableObject,checkscope.scopeChain]</p>
-<p>　　7.函数f执行完毕，f的上下文从环境栈中弹出，此时 contextStack = [checkscopeContext, globalContext]。同时返回 scope, 解释器根据f.scopeChain查找变量scope,在checkscope.scopeChain中找到scope(local scope)。</p>
-<p>　　8.checkscope函数执行完毕，其上下文从环境栈中弹出，contextStack = [globalContext]</p>
-<p>如果你理解了A的执行流程，那么B的流程在细节上一致，唯一的区别在于B的环境栈变化不一样，</p>
-<p>　　A: contextStack = [globalContext] —&gt; contextStack = [checkscopeContext, globalContext] —&gt; contextStack = [fContext, checkscopeContext, globalContext] —&gt; contextStack = [checkscopeContext, globalContext] —&gt; contextStack = [globalContext]</p>
-<p>　　B: contextStack = [globalContext] —&gt; contextStack = [checkscopeContext, globalContext] —&gt; contextStack = [fContext, globalContext] —&gt; contextStack = [globalContext]</p>
-<p>也就是说，真要说这两段代码有啥不同，那就是他们执行过程中环境栈的变化不一样，其他的两种方式都一样。</p>
-<p>其实对于理解这两段代码而言最根本的一点在于，javascript是使用静态作用域的语言，他的作用域在函数创建的时候便已经确定(不含arguments)。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/06/%E3%80%90JavaScript%E7%AF%87%E3%80%91%E7%AC%AC%E5%9B%9B%E7%AB%A0%EF%BC%9A%E5%8F%98%E9%87%8F%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%86%85%E5%AD%98%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-Android开发学习记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/05/Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">【Android篇】Android开发学习记录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/05/Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2020-01-05T10:13:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Android开发学习笔记："><a href="#Android开发学习笔记：" class="headerlink" title="Android开发学习笔记："></a>Android开发学习笔记：</h1><h2 id="一-安卓开发四大组件"><a href="#一-安卓开发四大组件" class="headerlink" title="一.安卓开发四大组件"></a>一.安卓开发四大组件</h2><ul>
-<li>活动（Activity） 界面层（应用程序）看到的所有界面均放在活动层。</li>
-<li>服务（Service）  后台，即使退出也仍然运行</li>
-<li>广播接收器（Broadcast Receiver） 接受广播消息，电话短信等等</li>
-<li>内容提供器（Content Provider）   应用程序之间共享数据</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/05/Android%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-transform-translate-50-，-50-）实现水平居中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/23/transform-translate-50-%EF%BC%8C-50-%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/">transform: translate(-50%，-50%）实现水平居中</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/23/transform-translate-50-%EF%BC%8C-50-%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/" class="archive-article-date">
-  	<time datetime="2019-12-23T10:45:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>translate()函数是css3的新特性.在不知道自身宽高的情况下，可以利用它来进行水平垂直居中
-当使用：top: 50%;left: 50%;， 是以左上角为原点，故不处于中心位置
-translate(-50%,-50%) 作用是，往上（x轴）,左（y轴）移动自身长宽的 50%，以使其居于中心位置。</code></pre><h1 id="具体定位代码如下"><a href="#具体定位代码如下" class="headerlink" title="具体定位代码如下"></a>具体定位代码如下</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;</span><br><span class="line">top: 50%;</span><br><span class="line">left: 50%;</span><br><span class="line">transform: translate(-50%,-50%);</span><br></pre></td></tr></table></figure>
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/23/transform-translate-50-%EF%BC%8C-50-%EF%BC%89%E5%AE%9E%E7%8E%B0%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-使用padding-top实现响应式背景图片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/18/%E4%BD%BF%E7%94%A8padding-top%E5%AE%9E%E7%8E%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">【前端篇-HTML和CSS】使用padding-top实现响应式背景图片</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/18/%E4%BD%BF%E7%94%A8padding-top%E5%AE%9E%E7%8E%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" class="archive-article-date">
-  	<time datetime="2019-12-18T08:36:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-使用padding-top-percentage-实现响应式背景图片"><a href="#一-使用padding-top-percentage-实现响应式背景图片" class="headerlink" title="一.使用padding-top:(percentage)实现响应式背景图片"></a>一.使用padding-top:(percentage)实现响应式背景图片</h1><pre><code>我门都知道，处理在响应性布局的时候，背景图片都是等比例缩放，比如上面的使用图片的情况，使用&lt;img /&gt; 引入的图片的话，那么设置她们的width属性为100%；&lt;img src=”” width=”100%”/&gt; 的话，高度就会等比例缩放，这是图片，但是如果是背景图片呢？我门之前的项目中的常见的做法是根据css3媒体查询的方法来做的，根据不同手机的分辨率等不同，来等比例缩放背景图的高度，虽然这种方式是可以解决问题的，但是这种通过人肉的方式来进行设置并不好，也很繁琐，今天我门来学习使用padding－top这么一个属性来设置了；
-
-实现的基本原理：将使用到保持元素的宽高比的技巧，为元素添加垂直方向的padding-top的值，使用百分比的形式，这个值是相对于元素的宽而定的，比如我上面的一张图片的宽度是1024px，高度为316px；那么现在的  
-padding-top = （高度 / 宽度 ）* 100% ＝ （316 ／ 1024）* 100% ＝  30.85%;</code></pre><p>代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.demo1-1 &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.zoomImage &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 0;</span><br><span class="line">  padding-top: 100%;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  background-position: center center;</span><br><span class="line">  background-repeat: no-repeat;</span><br><span class="line">  background-size: cover;</span><br><span class="line">  -webkit-background-size: cover;</span><br><span class="line">  -moz-background-size: cover;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/18/%E4%BD%BF%E7%94%A8padding-top%E5%AE%9E%E7%8E%B0%E5%93%8D%E5%BA%94%E5%BC%8F%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-【前端学习-CSS】CSS文本属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/17/%E3%80%90%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-CSS%E3%80%91CSS%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7/">【前端学习-CSS】CSS文本属性</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/17/%E3%80%90%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-CSS%E3%80%91CSS%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2019-12-17T15:06:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CSS文本属性关键字："><a href="#CSS文本属性关键字：" class="headerlink" title="CSS文本属性关键字："></a>CSS文本属性关键字：</h1><ul>
-<li>color             颜色</li>
-<li>font-family       字体样式</li>
-<li>font-size         字体大小</li>
-<li>font-weight       字体加粗</li>
-<li>font-style        字体倾斜等</li>
-<li>text-align        字体对齐方式</li>
-<li>line-height       行高</li>
-<li>height</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/17/%E3%80%90%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-CSS%E3%80%91CSS%E6%96%87%E6%9C%AC%E5%B1%9E%E6%80%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-【Java篇】网络编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">【Java篇】网络编程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2019-12-16T13:16:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-网络编程简介"><a href="#一-网络编程简介" class="headerlink" title="一. 网络编程简介"></a>一. 网络编程简介</h1><pre><code>所谓的网络编程指的就是多台主机之间的数据通讯操作</code></pre><h1 id="二-Echo程序模型"><a href="#二-Echo程序模型" class="headerlink" title="二. Echo程序模型"></a>二. Echo程序模型</h1><h2 id="1-TCP程序的基本实现"><a href="#1-TCP程序的基本实现" class="headerlink" title="1. TCP程序的基本实现"></a>1. TCP程序的基本实现</h2><pre><code>TCP的程序开发是网络程序的最基本的开发模型，其核心特点是使用俩个类实现数据的交互处  </code></pre><ul>
-<li>ServerSocket()  —&gt;   服务端</li>
-<li>Socket()   —&gt;   客户端<br>ServerSocket的主要目的是设置服务器的监听端口，而Socket需要指明要链接的服务器地址和端口</li>
-<li>ServerSocket​(int port)</li>
-<li>Socket​(String host, int port)<h2 id="2-Echo模型实现"><a href="#2-Echo模型实现" class="headerlink" title="2. Echo模型实现"></a>2. Echo模型实现</h2></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-【Java篇】Stream数据流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/">【Java篇】Stream数据流</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2019-12-16T11:53:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-Stream数据流简介"><a href="#一-Stream数据流简介" class="headerlink" title="一. Stream数据流简介"></a>一. Stream数据流简介</h1><p>从JDK1.8开始，由于已经进入了大数据时代，所以在类集里面也支持有数据的流式分析处理操作，，所以java提供了Stream的接口，同时在Collection接口里面也提供有为此接口实例化的方法</p>
-<ul>
-<li>default Stream<E> parallelStream​()：返回可能并行（多个CPU同时分析）的Stream数据流</li>
-<li>default Stream<E> stream​()：返回一个序列Stream  <h2 id="Stream基本操作："><a href="#Stream基本操作：" class="headerlink" title="Stream基本操作："></a>Stream基本操作：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123;</span><br><span class="line">	List&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">	Collections.addAll(list,&quot;java&quot;, &quot;python&quot;,&quot;go&quot;);</span><br><span class="line">	Stream&lt;String&gt; stream &#x3D; list.stream();</span><br><span class="line">	System.out.println(stream.count());</span><br><span class="line">       &#x2F;*实现查询数据中包含J的数据*&#x2F;</span><br><span class="line">       System.out.println(stream.filter((ele)-&gt;ele.toUpperCase().contains(&quot;J&quot;)).count());</span><br><span class="line"></span><br><span class="line">       &#x2F;*查找存在J字母的数据*&#x2F;</span><br><span class="line">       List&lt;String&gt; result &#x3D; stream.filter((ele)-&gt;ele.toUpperCase().contains(&quot;J&quot;)).collect(Collectors.toList());</span><br><span class="line">	System.out.println(result);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/16/%E3%80%90Java%E7%AF%87%E3%80%91Stream%E6%95%B0%E6%8D%AE%E6%B5%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java中Comparable接口研究" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/16/Java%E4%B8%ADComparable%E6%8E%A5%E5%8F%A3%E7%A0%94%E7%A9%B6/">【Java篇】Java中Comparable接口研究&lt;Comparable&gt;</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/16/Java%E4%B8%ADComparable%E6%8E%A5%E5%8F%A3%E7%A0%94%E7%A9%B6/" class="archive-article-date">
-  	<time datetime="2019-12-16T04:56:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Comparable接口"><a href="#Comparable接口" class="headerlink" title="Comparable接口"></a>Comparable接口</h1><p>使用Comparable就扣自定义排序规则并自动排序，我们先写如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class Person1 implements Comparable&lt;Person1&gt;&#123;</span><br><span class="line">	public Person1() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	private String name ; </span><br><span class="line">	private int age;</span><br><span class="line">	public Person1(String name ,int age) &#123;</span><br><span class="line">		this.name &#x3D; name ;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public int compareTo(Person1 o) &#123;</span><br><span class="line">		if(this.age &gt; o.age) return 1;</span><br><span class="line">		if(this.age &lt; o.age) return -1;</span><br><span class="line">		else &#123;</span><br><span class="line">			return 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;姓名：&quot; + this.name + &quot;、年龄&quot; + this.age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class leiji &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Set&lt;Person1&gt; set &#x3D; new TreeSet&lt;Person1&gt;();</span><br><span class="line">		set.add(new Person1(&quot;同思远&quot;,18));</span><br><span class="line">		set.add(new Person1(&quot;同林艺&quot;,18));</span><br><span class="line">		set.add(new Person1(&quot;薛子扬&quot;,19));</span><br><span class="line">		set.add(new Person1(&quot;张三&quot;,22));</span><br><span class="line">		set.add(new Person1(&quot;李四&quot;,50));</span><br><span class="line">		set.forEach(System.out::println);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们发现此程序输出的结果如下  </p>
-<ul>
-<li>姓名：同思远、年龄18</li>
-<li>姓名：薛子扬、年龄19</li>
-<li>姓名：张三、年龄22</li>
-<li>姓名：李四、年龄50  <h2 id="我们发现同林艺的名字是丢失的，原因是什么呢，我们在覆写compareto方法的时候，只将年龄作为排序的唯一标准，所以在遇到相同年龄的时候，由于TreeSet中不允许有重复元素的出现，所以出现了数据丢失的现象"><a href="#我们发现同林艺的名字是丢失的，原因是什么呢，我们在覆写compareto方法的时候，只将年龄作为排序的唯一标准，所以在遇到相同年龄的时候，由于TreeSet中不允许有重复元素的出现，所以出现了数据丢失的现象" class="headerlink" title="我们发现同林艺的名字是丢失的，原因是什么呢，我们在覆写compareto方法的时候，只将年龄作为排序的唯一标准，所以在遇到相同年龄的时候，由于TreeSet中不允许有重复元素的出现，所以出现了数据丢失的现象"></a>我们发现同林艺的名字是丢失的，原因是什么呢，我们在覆写compareto方法的时候，只将年龄作为排序的唯一标准，所以在遇到相同年龄的时候，由于TreeSet中不允许有重复元素的出现，所以出现了数据丢失的现象</h2><h2 id="故我们对该代码做优化，我们将Compareto方法进行优化，将所有的属性添加进去"><a href="#故我们对该代码做优化，我们将Compareto方法进行优化，将所有的属性添加进去" class="headerlink" title="故我们对该代码做优化，我们将Compareto方法进行优化，将所有的属性添加进去"></a>故我们对该代码做优化，我们将Compareto方法进行优化，将所有的属性添加进去</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public int compareTo(Person1 o) &#123;</span><br><span class="line">	if(this.age &gt; o.age) return 1;</span><br><span class="line">	if(this.age &lt; o.age) return -1;</span><br><span class="line">	else &#123;</span><br><span class="line">		return this.name.compareTo(o.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-此时年龄不再是排序的唯一标准，输出结果正常</li>
-</ul>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><pre><code>在进行自定义类排序的时候，一定要将该类中所有的属性都依次进行大小关系的匹配，否则某些属性相同的时候也会认为是重复数据。</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/16/Java%E4%B8%ADComparable%E6%8E%A5%E5%8F%A3%E7%A0%94%E7%A9%B6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Java类集框架[Set集合]" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/16/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BSet%E9%9B%86%E5%90%88%5D/">【Java篇】Java类集框架&lt;Set集合&gt;</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/16/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BSet%E9%9B%86%E5%90%88%5D/" class="archive-article-date">
-  	<time datetime="2019-12-16T04:19:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-Set集合"><a href="#一-Set集合" class="headerlink" title="一. Set集合"></a>一. Set集合</h1><h2 id="Set是什么："><a href="#Set是什么：" class="headerlink" title="Set是什么："></a>Set是什么：</h2><pre><code>Set不允许有重复元素的出现的集合</code></pre><h2 id="Set和List最大区别："><a href="#Set和List最大区别：" class="headerlink" title="Set和List最大区别："></a>Set和List最大区别：</h2><pre><code>需要注意的是Set集合并不像List集合那样扩充了许多新方法，所以无法使用List集合中提供的get方法，也就是说set集合无法实现指定索引数据的获取</code></pre><h1 id="二-常用实现子类："><a href="#二-常用实现子类：" class="headerlink" title="二. 常用实现子类："></a>二. 常用实现子类：</h1><h2 id="Set："><a href="#Set：" class="headerlink" title="Set："></a>Set：</h2><ul>
-<li>HashSet</li>
-<li>TreeSet</li>
-</ul>
-<h1 id="三-子类介绍："><a href="#三-子类介绍：" class="headerlink" title="三. 子类介绍："></a>三. 子类介绍：</h1><h2 id="1-HashSet（最常用）"><a href="#1-HashSet（最常用）" class="headerlink" title="1.HashSet（最常用）"></a>1.HashSet（最常用）</h2><pre><code>HashSet是Set中使用最多的实现子类，其最大的特点就是保存的数据是无序的  
-HashSet继承了Set的无序特点，并且也不允许有重复元素的出现，需要注意的是，HashSet中允许有null元素的出现
-**************************************************************************************
-HashSet中判断元素重复是使用的Object类中的hashcode()和equals()方法共同实现的
-在eclipse中我们可以通过source-&gt;来创建hashCode()方法和equals()方法</code></pre><h2 id="2-TreeSet"><a href="#2-TreeSet" class="headerlink" title="2.TreeSet"></a>2.TreeSet</h2><pre><code>TreeSet与HashSet的最大区别是TreeSet是有序的
-Set接口是根据equals定义的，而TreeSet是根据compareTo（或compare）方法执行所有元素的比较，所以当TreeSet保存自定义类的时候，必须实现Comparable接口
-当利用TreeSet保存数据的时候，数据将自动按照升序的排序方式进行排列（Eg:字母从A到Z）</code></pre><p>注释：</p>
-<h3 id="由于TreeSet是通过compareTo方法确定大小关系的，所以在进行自定义类排序的时候，一定要将所有的属性都进行大小关系匹配，详情见博客”Java中Comparable接口研究”。"><a href="#由于TreeSet是通过compareTo方法确定大小关系的，所以在进行自定义类排序的时候，一定要将所有的属性都进行大小关系匹配，详情见博客”Java中Comparable接口研究”。" class="headerlink" title="由于TreeSet是通过compareTo方法确定大小关系的，所以在进行自定义类排序的时候，一定要将所有的属性都进行大小关系匹配，详情见博客”Java中Comparable接口研究”。"></a>由于TreeSet是通过compareTo方法确定大小关系的，所以在进行自定义类排序的时候，一定要将所有的属性都进行大小关系匹配，详情见博客”Java中Comparable接口研究”。</h3><h3 id="将所有的属性进行大小匹配，这样难度会非常大，所以在开发中我们首选HashSet进行数据的存储"><a href="#将所有的属性进行大小匹配，这样难度会非常大，所以在开发中我们首选HashSet进行数据的存储" class="headerlink" title="将所有的属性进行大小匹配，这样难度会非常大，所以在开发中我们首选HashSet进行数据的存储"></a>将所有的属性进行大小匹配，这样难度会非常大，所以在开发中我们首选HashSet进行数据的存储</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/16/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BSet%E9%9B%86%E5%90%88%5D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -908,8 +342,8 @@ Set接口是根据equals定义的，而TreeSet是根据compareTo（或compare）
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

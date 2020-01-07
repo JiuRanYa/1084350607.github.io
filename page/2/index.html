@@ -149,6 +149,152 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java类集框架[List集合]" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BList%E9%9B%86%E5%90%88%5D/">【Java篇】Java类集框架&lt;List&gt;</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BList%E9%9B%86%E5%90%88%5D/" class="archive-article-date">
+  	<time datetime="2019-12-15T09:43:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-Collection父接口"><a href="#一-Collection父接口" class="headerlink" title="一. Collection父接口"></a>一. Collection父接口</h1><h2 id="java-util-Collection是单值集合操作的最大父接口"><a href="#java-util-Collection是单值集合操作的最大父接口" class="headerlink" title="java.util.Collection是单值集合操作的最大父接口"></a>java.util.Collection是单值集合操作的最大父接口</h2><ul>
+<li>所有通用的Collection实现类（通常通过其子接口间接实现Collection ）应该提供两个“标准”构造函数：一个void（无参数）构造函数，它创建一个空集合，以及一个具有单个参数类型的构造函数Collection ，它创建一个与其参数相同的元素的新集合</li>
+</ul>
+<h1 id="二-常见的几个核心接口"><a href="#二-常见的几个核心接口" class="headerlink" title="二. 常见的几个核心接口"></a>二. 常见的几个核心接口</h1><ul>
+<li>List（允许保存重复的元素数据）三个子类：<ul>
+<li>ArrayList<br><img src="http://q2jp0zc7u.bkt.clouddn.com/ArrayList.png" alt="alt"></li>
+<li>Vector</li>
+<li>LinkedList </li>
+</ul>
+</li>
+</ul>
+<p>Array继承关系如下：<br><img src="http://q2jp0zc7u.bkt.clouddn.com/sce.png" alt="alt"></p>
+<h2 id="List中也提供了of-的静态方法可以直接使用，操作如下"><a href="#List中也提供了of-的静态方法可以直接使用，操作如下" class="headerlink" title="List中也提供了of 的静态方法可以直接使用，操作如下"></a>List中也提供了of 的静态方法可以直接使用，操作如下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class leiji &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		ArrayList&lt;String&gt; list &#x3D; new ArrayList&lt;String&gt;();</span><br><span class="line">		list.add(&quot;你好&quot;);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		</span><br><span class="line">		List&lt;String&gt; list2 &#x3D; List.of(&quot;hello&quot;,&quot;world&quot;);</span><br><span class="line">		System.out.println(list2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注释:ArrayList初始长度为10，当长度不够时，ArrayList的长度将翻倍增长:10-&gt;20-&gt;40-&gt;80</span><br></pre></td></tr></table></figure>
+<p>三. ArrayList保存自定义类<br>    ArrayList保存自定义类的时候，一定要确保该类中覆写了equals方法，否则不能进行删除等操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">	public Person() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	private String name ; </span><br><span class="line">	private int age;</span><br><span class="line">	public Person(String name ,int age) &#123;</span><br><span class="line">		this.name &#x3D; name ;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public boolean equals(Object obj) &#123;</span><br><span class="line">		if(this &#x3D;&#x3D; obj) return true;</span><br><span class="line">		if(obj &#x3D;&#x3D; null) return false;</span><br><span class="line">		if(!(obj instanceof person)) return false;</span><br><span class="line">		else &#123;</span><br><span class="line">			Person per &#x3D; (Person)obj;</span><br><span class="line">			return this.name.equals(per.name) &amp;&amp; this.age &#x3D;&#x3D; per.age;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="四-LinkedList链表实现："><a href="#四-LinkedList链表实现：" class="headerlink" title="四. LinkedList链表实现："></a>四. LinkedList链表实现：</h1><h2 id="LinkedList链表实现，在操作上与ArrayList没用任何区别，但是LinkedList优点在于不用事先对数据的存储数量有明确要求，故LinkedList只存在无参构造方法。"><a href="#LinkedList链表实现，在操作上与ArrayList没用任何区别，但是LinkedList优点在于不用事先对数据的存储数量有明确要求，故LinkedList只存在无参构造方法。" class="headerlink" title="LinkedList链表实现，在操作上与ArrayList没用任何区别，但是LinkedList优点在于不用事先对数据的存储数量有明确要求，故LinkedList只存在无参构造方法。"></a>LinkedList链表实现，在操作上与ArrayList没用任何区别，但是LinkedList优点在于不用事先对数据的存储数量有明确要求，故LinkedList只存在无参构造方法。</h2><h2 id="LinkedList链表主要是为了解决顺序表以下的一系列缺点所产生的更优数据结构。"><a href="#LinkedList链表主要是为了解决顺序表以下的一系列缺点所产生的更优数据结构。" class="headerlink" title="LinkedList链表主要是为了解决顺序表以下的一系列缺点所产生的更优数据结构。"></a>LinkedList链表主要是为了解决顺序表以下的一系列缺点所产生的更优数据结构。</h2><ul>
+<li>表的容量难以扩充</li>
+<li>需要预先分配空间</li>
+<li>插入删除移动次数很多，性能低</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/15/Java%E7%B1%BB%E9%9B%86%E6%A1%86%E6%9E%B6%5BList%E9%9B%86%E5%90%88%5D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java为什么要在类中声明一个无参构造方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/Java%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/">【Java篇】Java为什么要在类中声明一个无参构造方法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/Java%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2019-12-15T08:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="java默认的在调用子类构造方法前先调用父类的构造方法，如果你没有指定调用父类的哪个构造方法，那么java默认调用父类无参数的构造方法"><a href="#java默认的在调用子类构造方法前先调用父类的构造方法，如果你没有指定调用父类的哪个构造方法，那么java默认调用父类无参数的构造方法" class="headerlink" title="java默认的在调用子类构造方法前先调用父类的构造方法，如果你没有指定调用父类的哪个构造方法，那么java默认调用父类无参数的构造方法"></a>java默认的在调用子类构造方法前先调用父类的构造方法，如果你没有指定调用父类的哪个构造方法，那么java默认调用父类无参数的构造方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class person implements Serializable&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	public person() &#123;</span><br><span class="line">	&#125;</span><br><span class="line">	public person(String name ,int age) &#123;</span><br><span class="line">		this.name &#x3D; name ;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class student extends person&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	private long ID;</span><br><span class="line">	public student(String name ,int age, long ID) &#123;</span><br><span class="line">		super(name,age);</span><br><span class="line">		this.ID &#x3D; ID;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="子类默认调用父类的无参构造方法，如果没有无参构造方法则会报错，没用无参构造的时候要通过super指定父类的构造方法"><a href="#子类默认调用父类的无参构造方法，如果没有无参构造方法则会报错，没用无参构造的时候要通过super指定父类的构造方法" class="headerlink" title="子类默认调用父类的无参构造方法，如果没有无参构造方法则会报错，没用无参构造的时候要通过super指定父类的构造方法"></a>子类默认调用父类的无参构造方法，如果没有无参构造方法则会报错，没用无参构造的时候要通过super指定父类的构造方法</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/15/Java%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%9C%A8%E7%B1%BB%E4%B8%AD%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java对象序列化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -761,131 +907,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/12/14/%E8%87%AA%E6%88%91%E5%8F%8D%E6%80%9D/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Servlet实现验证码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/">【JavaWeb篇】Servlet实现验证码</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一-制作网页"><a href="#一-制作网页" class="headerlink" title="一.制作网页"></a>一.制作网页</h1><h2 id="1-验证码包含俩部分：输入框和显示验证码的图片"><a href="#1-验证码包含俩部分：输入框和显示验证码的图片" class="headerlink" title="1.验证码包含俩部分：输入框和显示验证码的图片"></a>1.验证码包含俩部分：输入框和显示验证码的图片</h2><h2 id="2-那么验证码图片是如何获取的呢？"><a href="#2-那么验证码图片是如何获取的呢？" class="headerlink" title="2.那么验证码图片是如何获取的呢？"></a>2.那么验证码图片是如何获取的呢？</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Servlet%E5%AE%9E%E7%8E%B0%E9%AA%8C%E8%AF%81%E7%A0%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Spring-boot-邮件发送实战记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">【框架篇】Spring boot 邮件发送实战记录</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2019-12-14T11:13:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="第一部分-背景（前置知识）"><a href="#第一部分-背景（前置知识）" class="headerlink" title="第一部分 背景（前置知识）"></a>第一部分 背景（前置知识）</h1><h2 id="一-邮件发送原理："><a href="#一-邮件发送原理：" class="headerlink" title="一.邮件发送原理："></a>一.邮件发送原理：</h2><h3 id="1-邮件传输协议-SMTP协议和POP3协议"><a href="#1-邮件传输协议-SMTP协议和POP3协议" class="headerlink" title="1.邮件传输协议:SMTP协议和POP3协议"></a>1.邮件传输协议:SMTP协议和POP3协议</h3><h3 id="2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"><a href="#2-内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）" class="headerlink" title="2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）"></a>2.内容不断发展：新增协议：IMAP协议和Mime协议（斯塔福大学开发的邮件获取协议）</h3><h2 id="二-邮件发送流程："><a href="#二-邮件发送流程：" class="headerlink" title="二.邮件发送流程："></a>二.邮件发送流程：</h2><p><img src="http://a1.qpic.cn/psc?/V12mUYwE30s05c/1nSAZ*B78DPTEG5idIpYk0EarqPloBkkxkCy3I6JOJrPNIHXyX3ap3jRcVOiTq6amkCz4.SFp9eTe3KMkQmnrG3vUq2hSEwAqf1bn0B4pdU!/c&ek=1&kp=1&pt=0&bo=gAKpAQAAAAADFxg!&tl=1&vuin=1084350607&tm=1576328400&sce=60-2-2&rf=viewer_4" alt="alt "> </p>
-<h2 id="三-Spring-Boot介绍"><a href="#三-Spring-Boot介绍" class="headerlink" title="三.Spring Boot介绍"></a>三.Spring Boot介绍</h2><h3 id="1-约定大于配置"><a href="#1-约定大于配置" class="headerlink" title="1.约定大于配置"></a>1.约定大于配置</h3><h3 id="2-简单快速开发"><a href="#2-简单快速开发" class="headerlink" title="2.简单快速开发"></a>2.简单快速开发</h3><h3 id="3-强大的生态链"><a href="#3-强大的生态链" class="headerlink" title="3.强大的生态链"></a>3.强大的生态链</h3><h3 id="4-Spring-boot和发送邮件："><a href="#4-Spring-boot和发送邮件：" class="headerlink" title="4.Spring boot和发送邮件："></a>4.Spring boot和发送邮件：</h3><pre><code>Spring boot发送邮件简化了操作的过程</code></pre><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/14/Spring-boot-%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95/">展开全文 >></a>
         </p>
       
 
